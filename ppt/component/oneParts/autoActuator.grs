@@ -1,0 +1,31 @@
+<template>
+  <div>
+    <div
+      id='autoActuator'
+      data-x='-13000'
+      data-rotate-z='90'
+      className='step pure-text'
+    >
+      autoActuator
+    </div>
+
+    <div
+      data-x='-14000'
+      data-rotate-z='90'
+      id='autoActuatorTwo'
+      className='step pure-text'
+    >
+      autoActuatorTwo
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  module.exports = Grass.CSSModules(style)(
+    class AutoActuator extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

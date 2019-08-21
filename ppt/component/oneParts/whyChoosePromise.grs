@@ -1,0 +1,31 @@
+<template>
+  <div>
+    <div
+      data-x='-7000'
+      data-rotate-z='90'
+      id='whyChoosePromiseOne'
+      className='step pure-text'
+    >
+      whyChoosePromiseOne
+    </div>
+
+    <div
+      data-x='-8000'
+      data-rotate-z='90'
+      id='whyChoosePromiseTwo'
+      className='step pure-text'
+    >
+      whyChoosePromiseTwo
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  module.exports = Grass.CSSModules(style)(
+    class WhyChoosePromise extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

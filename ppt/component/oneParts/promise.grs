@@ -1,0 +1,20 @@
+<template>
+  <div
+    data-x='-5000'
+    data-rotate-z='90'
+    id='PromiseShow'
+    className='step pure-text'
+  >
+    promise 出现了
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  module.exports = Grass.CSSModules(style)(
+    class PromiseShow extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

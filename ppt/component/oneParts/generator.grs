@@ -1,0 +1,40 @@
+<template>
+  <div>
+    <div
+      data-x='-10000'
+      data-rotate-z='90'
+      id='generatorOne'
+      className='step pure-text'
+    >
+      generatorOne
+    </div>
+
+    <div
+      data-x='-11000'
+      data-rotate-z='90'
+      id='generatorTwo'
+      className='step pure-text'
+    >
+      generatorTwo
+    </div>
+
+    <div
+      data-x='-12000'
+      data-rotate-z='90'
+      id='generatorThree'
+      className='step pure-text'
+    >
+      generatorThree
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  module.exports = Grass.CSSModules(style)(
+    class Generator extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

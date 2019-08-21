@@ -1,0 +1,20 @@
+<template>
+  <div
+    data-x='-15000'
+    data-rotate-z='90'
+    id='asyncFunction'
+    className='step pure-text'
+  >
+    AsyncFunction
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  module.exports = Grass.CSSModules(style)(
+    class AsyncFunction extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

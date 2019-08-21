@@ -1,0 +1,37 @@
+<template>
+  <div>
+    <History />
+    <Callback />
+    <CallbackHell />
+    <CallbackChange />
+    <PromiseShow />
+    <CallbackToPromise />
+    <WhyChoosePromise />
+    <PromiseChangeToDeferred />
+    <Generator />
+    <AutoActuator />
+    <AsyncFunction />
+    <AsyncTest />
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  module.exports = class OneParts extends Grass.Component {
+    // #temp
+    component = {
+      History: require('./history'),
+      Callback: require('./callback'),
+      Generator: require('./generator'),
+      PromiseShow: require('./promise'),
+      AsyncTest: require('./asyncTest'),
+      AutoActuator: require('./autoActuator'),
+      CallbackHell: require('./callbackHell'),
+      AsyncFunction: require('./asyncFunction'),
+      CallbackChange: require('./callbackChange'),
+      WhyChoosePromise: require('./whyChoosePromise'),
+      CallbackToPromise: require('./callbackToPromise'),
+      PromiseChangeToDeferred: require('./promiseChangeToDeferred'),
+    }
+  }
+</script>

@@ -1,0 +1,69 @@
+<template>
+  <div>
+    <a
+      styleName='github-icon'
+      href='https://github.com/imtaotao/co-share'
+    >
+      <img src='./img/github.svg' />
+    </a>
+
+    <div id='impress'>
+      <!-- 标题 -->
+      <div
+        id='title'
+        data-x='0'
+        data-y='400'
+        data-scale='2'
+        className='step'
+        styleName='title'
+      >
+        <h1 className='center'>co.js 源码解读 <sup>*</sup> </h1>
+        <h3
+          className='center'
+          styleName='author'
+        >
+          <span> —— By chentao</span>
+        </h3>
+      </div>
+      
+      <!-- 介绍 -->
+      <div
+        data-x='0'
+        data-y='200'
+        id='description'
+        className='step pure-text'
+      >
+        <p className='center'><b>co 这个库是用来做什么的 ？</b></p>
+        <p className='center'><b>我们解读他能够获得什么 ？</b></p>
+      </div>
+
+      <div
+        id='one'
+        data-x='500'
+        className='step pure-text'
+      >
+        <div className='center'>我们从 JavaScript 异步历史说起吧~</div>
+      </div>
+
+      <!-- 目录 -->
+      <Directory />
+
+      <!-- 第一部分的 -->
+      <OneParts />
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+
+  class Root extends Grass.Component {
+    // #temp
+    component = {
+      OneParts: require('@comp/oneParts/index'),
+      Directory: require('@comp/directory/index'),
+    }
+  }
+  module.exports = Grass.CSSModules(style)(Root)
+</script>

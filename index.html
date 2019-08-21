@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Co ppt by taotao</title>
+  <link rel="stylesheet" href="lib/highlight.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -24,13 +25,13 @@
     <div id="guide" class="step" data-autoplay='0.1'></div>
 
     <!-- 标题 -->
-    <div id="title" class="step title" data-x="0" data-y="400" data-scale="2">
+    <!-- <div id="title" class="step title" data-x="0" data-y="400" data-scale="2">
       <h1 class="center">co.js 源码解读 <sup>*</sup> </h1>
       <h3 class="author center">—— By chentao</h3>
-    </div>
+    </div> -->
     
     <!-- 介绍 -->
-    <div id="description" class="step pure-text" data-x="0" data-y="200">
+    <!-- <div id="description" class="step pure-text" data-x="0" data-y="200">
       <p class="center"><b>co 这个库是用来做什么的 ？</b><br/>
       <p class="center"><b>我们解读他能够获得什么 ？</b><br/>
     </div>
@@ -56,39 +57,101 @@
       </ul>
     </div>
 
-    <div id="callback" class="step pure-text" data-y="500">
-      callback
+    <div id="history" class="step history" data-rotate-z='90' data-x="1000">
+      
     </div>
 
-    <div id="callbackHell" class="step pure-text" data-y="1000">
+    <div id="callback" class="step pure-text pure-code" data-rotate-z='90' data-x="-2000">
+      <b>callback</b>
+      
+    </div>
+
+    <div id="callbackHell" class="step pure-text" data-rotate-z='90' data-x="-3000">
       callbackHell
     </div>
 
-    <div id="callbackChange" class="step pure-text" data-y="1500">
+    <div id="callbackChange" class="step pure-text" data-rotate-z='90' data-x="-4000">
         callbackChange
     </div>
 
-    <div id="promise" class="step pure-text" data-y="2000">
+    <div id="promise" class="step pure-text" data-rotate-z='90' data-x="-5000">
       promise 出现了
     </div>
 
-    <div id="callbackToPromise" class="step pure-text" data-y="2500">
+    <div id="callbackToPromise" class="step pure-text" data-rotate-z='90' data-x="-6000">
         callbackToPromise
     </div>
 
-    <div id="whyChoosePromiseOne" class="step pure-text" data-y="3000">
+    <div id="whyChoosePromiseOne" class="step pure-text" data-rotate-z='90' data-x="-7000">
         whyChoosePromiseOne
     </div>
 
-    <div id="whyChoosePromiseTwo" class="step pure-text" data-y="3500">
+    <div id="whyChoosePromiseTwo" class="step pure-text" data-rotate-z='90' data-x="-8000">
         whyChoosePromiseTwo
     </div>
 
-    <div id="promiseChangeToDeferred" class="step pure-text" data-y="4000">
+    <div id="promiseChangeToDeferred" class="step pure-text" data-rotate-z='90' data-x="-9000">
       promiseChangeToDeferred
     </div>
+
+    <div id="generatorOne" class="step pure-text" data-rotate-z='90' data-x="-10000">
+      generatorOne
+    </div>
+
+    <div id="generatorTwo" class="step pure-text" data-rotate-z='90' data-x="-11000">
+      generatorTwo
+    </div>
+
+    <div id="generatorThree" class="step pure-text" data-rotate-z='90' data-x="-12000">
+      generatorThree
+    </div>
+
+    <div id="autoActuator" class="step pure-text" data-rotate-z='90' data-x="-13000">
+      autoActuator
+    </div>
+
+    <div id="autoActuatorTwo" class="step pure-text" data-rotate-z='90' data-x="-14000">
+      autoActuatorTwo
+    </div>
+
+    <div id="asyncFunction" class="step pure-text" data-rotate-z='90' data-x="-15000">
+      asyncFunction
+    </div>
+
+    <div id="asyncTest" class="step pure-text" data-rotate-z='0' data-x="-16000">
+      asyncTest
+    </div>
+
+    <div id="coAnalysis" class="step pure-text" data-x="1000">
+      coAnalysis
+    </div> -->
   </div>
-  <script src="js/impress.js"></script>
+
+  <pre>
+    <code>
+      function ordinary () {
+        let i = 1
+        // ...
+        return i
+      }
+      
+      function callback () {
+        let i = 1
+        setTimeout(() => {
+            return i
+        })
+      }
+      
+      // demo
+      const result = ordinary()
+      console.log(result) // 1
+      
+      const resultTwo = callback()
+      console.log(resultTwo) // undefined
+    </code>
+  </pre>
+  <script src="lib/impress.js"></script>
+  <script src="lib/highlight.pack.js"></script>
   <script src="js/index.js"></script>
 </body>
 </html>

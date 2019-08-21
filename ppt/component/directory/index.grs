@@ -1,0 +1,29 @@
+<template>
+  <div
+    data-x='2000'
+    id='directory'
+    styleName='direactory'
+    className='step pure-text'
+  >
+     <h3>目录</h3>
+      <span styleName='sub-title'>发展历程</span>
+      <ul>
+        <li>什么是 callback</li>
+        <li>社区的带来的 promise 方案</li>
+        <li>为什么 ES6 选择了 promise</li>
+        <li>promise + generator</li>
+        <li>async/await 语法糖</li>
+      </ul>
+      <span styleName='sub-title'>co 分析</span>
+      <ul>
+        <li>objectToPromise 函数分析</li>
+        <li>theable 的鸭子模型</li>
+      </ul>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  module.exports = Grass.CSSModules(style)(() => /* #temp string */)
+</script>

@@ -1,0 +1,20 @@
+<template>
+  <div
+    id='history'
+    data-x='-1000'
+    data-rotate-z='90'
+    className='step pure-text'
+  >
+    history
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  module.exports = Grass.CSSModules(style)(
+    class History extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

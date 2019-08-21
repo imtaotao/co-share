@@ -1,0 +1,20 @@
+<template>
+  <div
+    data-x='-6000'
+    data-rotate-z='90'
+    id='callbackToPromise'
+    className='step pure-text'
+  >
+    callbackToPromise
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  module.exports = Grass.CSSModules(style)(
+    class CallbackToPromise extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

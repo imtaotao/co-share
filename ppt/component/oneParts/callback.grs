@@ -1,0 +1,49 @@
+<template>
+  <div
+    id='callback'
+    data-x='-2000'
+    data-rotate-z='90'
+    className='step pure-text'
+  >
+    <b>callback</b>
+    <pre
+      v-lighlight
+      className='hljs pure-code'
+    >
+      <code>
+        function ordinary () {
+          let i = 1
+          // ...
+          return i
+        }
+        
+        function callback () {
+          let i = 1
+          setTimeout(() => {
+              return i
+          })
+        }
+        
+        const result = ordinary()
+        console.log(result) // 1
+        
+        const resultTwo = callback()
+        console.log(resultTwo) // undefined
+      </code>
+    </pre>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  module.exports = Grass.CSSModules(style)(
+    class Callback extends Grass.Component {
+      // #temp
+
+      created () {
+        
+      }
+    }
+  )
+</script>
