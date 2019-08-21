@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  background: rgb(49, 54, 64);
+}
+
+@font-face {
+  font-family: xihei;
+  src: url('../font/方正兰亭超细黑简体.ttf');
+}
+
+/* 该类添加在还未展示的步骤结点，当该元素被导航时会自动删除future类，显示页面 */
+.future {
+  pointer-events: none;
+}
+
+/* 该类会在步骤元素被导航过后自动添加 */
+.past {
+  pointer-events: none;
+}
+
+/* 该类会被自动添加到目前位于屏幕中央的步骤结点，这对幻灯片展示时的动画效果非常有用 */
+/* .present .rotating {
+  transform: rotate(-10deg);
+} */
+
+.step {
+  opacity: 0;
+  width: 80vw;
+  font-size: 30px;
+  transition: all 0.5s;
+}
+
+/* 该类会被自动添加到当前的步骤元素，与presentclass类似 */
+.step.active {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+/* impress-on-* */
+/* 用于定义每个步骤结点的样式，步骤结点的id可以在URL中看到，如#/step-1 */
+.impress-on-overview .step {
+  opacity: 1;
+  cursor: pointer;
+}
+.impress-on-step-1,
+.impress-on-step-2,
+.impress-on-step-3 {
+  background: rgb(49, 54, 64);
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-icon {
+  top: 20px;
+  left: 20px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  position: fixed;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.pure-text {
+  font-size: 60px;
+  color: #cacaca;
+  font-family: xihei;
+  font-weight: bold;
+}
+
+/* title */
+.title {
+  margin-top: -100px;
+  font-size: 40px;
+  color: #cdcdcd;
+}
+
+.author {
+  margin-left: 440px;
+  margin-top: 50px;
+  font-size: 30px;
+  font-family: xihei;
+  color: #d0d0d0;
+}
+
+.sub-title {
+  font-size: 45px;
+}
+
+.direactor ul {
+  padding: 0 80px;
+  font-size: 30px;
+}
+
+.direactor ul li {
+  margin-bottom: 10px;
+}

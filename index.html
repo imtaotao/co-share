@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Co ppt by taotao</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <!-- 
+    data-x = 幻灯片x坐标
+    data-y = 幻灯片y坐标
+    data-scale = 缩放比例
+    data-rotate = 平面旋转角度
+    data-rotate-x = x轴旋转角度(3D)
+    data-rotate-y = y轴旋转角度(3D)
+    data-rotate-z = z轴旋转角度(3D)
+  -->
+  <a href="./index.html" class="github-icon">
+    <img src="./img/github.svg" />
+  </a>
+
+  <div id="impress">
+    <div id="guide" class="step" data-autoplay='0.1'></div>
+
+    <!-- 标题 -->
+    <div id="title" class="step title" data-x="0" data-y="400" data-scale="2">
+      <h1 class="center">co.js 源码解读 <sup>*</sup> </h1>
+      <h3 class="author center">—— By chentao</h3>
+    </div>
+    
+    <!-- 介绍 -->
+    <div id="description" class="step pure-text" data-x="0" data-y="200">
+      <p class="center"><b>co 这个库是用来做什么的 ？</b><br/>
+      <p class="center"><b>我们解读他能够获得什么 ？</b><br/>
+    </div>
+
+    <div id="one" class="step pure-text" data-x="500">
+      <div class="center">我们从 JavaScript 异步历史说起吧~</div>
+    </div>
+
+    <div id="directory" class="step direactor pure-text" data-x="2000">
+      <h3>目录</h3>
+      <span class="sub-title">发展历程</span>
+      <ul>
+        <li>什么是 callback</li>
+        <li>社区的带来的 promise 方案</li>
+        <li>为什么 ES6 选择了 promise</li>
+        <li>promise + generator</li>
+        <li>async/await 语法糖</li>
+      </ul>
+      <span class="sub-title">co 分析</span>
+      <ul>
+        <li>objectToPromise 函数分析</li>
+        <li>theable 的鸭子模型</li>
+      </ul>
+    </div>
+
+    <div id="callback" class="step pure-text" data-y="500">
+      callback
+    </div>
+
+    <div id="callbackHell" class="step pure-text" data-y="1000">
+      callbackHell
+    </div>
+
+    <div id="callbackChange" class="step pure-text" data-y="1500">
+        callbackChange
+    </div>
+
+    <div id="promise" class="step pure-text" data-y="2000">
+      promise 出现了
+    </div>
+
+    <div id="callbackToPromise" class="step pure-text" data-y="2500">
+        callbackToPromise
+    </div>
+
+    <div id="whyChoosePromiseOne" class="step pure-text" data-y="3000">
+        whyChoosePromiseOne
+    </div>
+
+    <div id="whyChoosePromiseTwo" class="step pure-text" data-y="3500">
+        whyChoosePromiseTwo
+    </div>
+
+    <div id="promiseChangeToDeferred" class="step pure-text" data-y="4000">
+      promiseChangeToDeferred
+    </div>
+  </div>
+  <script src="js/impress.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
