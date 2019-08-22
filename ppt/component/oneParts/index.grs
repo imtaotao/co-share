@@ -10,8 +10,10 @@
     <PromiseChangeToDeferred />
     <Generator />
     <AutoActuator />
+    <AutoActuatorTest />
     <AsyncFunction />
     <AsyncTest />
+    <Summary />
   </div>
 </template>
 
@@ -20,6 +22,7 @@
   module.exports = class OneParts extends Grass.Component {
     // #temp
     component = {
+      Summary: require('./summary'),
       History: require('./history'),
       Callback: require('./callback'),
       Generator: require('./generator'),
@@ -29,6 +32,7 @@
       CallbackHell: require('./callbackHell'),
       AsyncFunction: require('./asyncFunction'),
       CallbackChange: require('./callbackChange'),
+      AutoActuatorTest: require('./AutoActuatorTest'),
       WhyChoosePromise: require('./whyChoosePromise'),
       CallbackToPromise: require('./callbackToPromise'),
       PromiseChangeToDeferred: require('./promiseChangeToDeferred'),

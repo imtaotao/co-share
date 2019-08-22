@@ -3,9 +3,11 @@
     data-x='-5000'
     data-rotate-z='90'
     id='PromiseShow'
+    styleName='title'
     className='step pure-text'
   >
-    promise 出现了
+    社区陆续出来了 promise 和类 promise 的方案
+    <p>JQuery1.5 中就有了 deferred 的概念</p>
   </div>
 </template>
 

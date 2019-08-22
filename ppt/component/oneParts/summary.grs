@@ -1,0 +1,61 @@
+<template>
+  <div>
+    <div
+      id='SummaryOne'
+      data-x='-17000'
+      data-rotate-z='90'
+      styleName='title'
+      className='step pure-text'
+    >
+      <div styleName='left-title'>我们的写法，最终演变成了这样</div>
+
+      <pre
+        v-lighlight
+        className='hljs pure-code half'
+      >
+        <code >
+          xhr.get('xx', data, res => {
+            console.log(res)
+          })
+        </code>
+      </pre>
+
+      <pre
+        v-lighlight
+        className='hljs pure-code half'
+      >
+        <code >
+        const res = await xhr.get('xx', data)
+        console.log(res)
+        </code>
+      </pre>
+    </div>
+
+    <div
+      id='SummaryTwo'
+      data-x='-17000'
+      data-rotate-z='90'
+      className='step pure-text'
+      styleName='title conclusion'
+    >
+      # 我们为什么需要 callback<br/>
+      # callback 带来的问题<br/>
+      # 社区给了解决方案并最终被规范所接纳<br/>
+      # promise + generator 带来更极致的异步编程体验<br/>
+      # async/await 语法糖更加强化这一体验<br/>
+      # 这一系列的变化让我们对异步的控制流程加强了很多，更加同步直观的语法，带来更少的维护负担和更少的 bug<br/>
+
+      <div>我们好像还没有开始讲 co ~</div>
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  module.exports = Grass.CSSModules(style)(
+    class Summary extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

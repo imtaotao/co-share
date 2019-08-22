@@ -1,11 +1,41 @@
 <template>
-  <div
-    data-x='-9000'
-    data-rotate-z='90'
-    className='step pure-text'
-    id='promiseChangeToDeferred'
-  >
-    promiseChangeToDeferred
+  <div>
+    <div
+      data-x='-9000'
+      data-rotate-z='90'
+      className='step pure-text'
+      styleName='title left-title'
+      id='promiseChangeToDeferred'
+    >
+      deferred 对象其实就是一个<b>发布/订阅</b>模式
+
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          function createDeferred () {
+            let resolve, reject
+
+            const promise = new Promise((_resolve, _reject) => {
+              resolve = _resolve
+              reject = _reject
+            })
+            return { promise, resolve, reject }
+          }
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-x='-9000'
+      data-rotate-z='90'
+      styleName='title'
+      className='step pure-text'
+      id='whyChoosePromiseSeven'
+    >
+      promise 链式调用的语法还是不够同步，怎么办~
+    </div>
   </div>
 </template>
 

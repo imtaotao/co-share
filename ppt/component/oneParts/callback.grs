@@ -1,36 +1,90 @@
 <template>
-  <div
-    id='callback'
-    data-x='-2000'
-    data-rotate-z='90'
-    className='step pure-text'
-  >
-    <b>callback</b>
-    <pre
-      v-lighlight
-      className='hljs pure-code'
+  <div>
+    <div
+      data-x='-2000'
+      data-rotate-z='90'
+      id='callbackOne'
+      styleName='title'
+      className='step pure-text'
     >
-      <code>
-        function ordinary () {
-          let i = 1
-          // ...
-          return i
-        }
-        
-        function callback () {
-          let i = 1
-          setTimeout(() => {
-              return i
+      <div styleName='left-title more-text'>
+        如果一个函数无法无法立即返回 value，而是经过一段不可预测的行为时间之后（副作用），才能得到 value
+      </div>
+      <div styleName='left-title more-text'>
+        我们要如何做？
+      </div>
+    </div>
+
+    <div
+      data-x='-2000'
+      data-rotate-z='90'
+      id='callbackTwo'
+      className='step pure-text'
+    >
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          function ordinary () {
+            const i = value
+            // ...
+            return value
+          }
+          
+          function sideEffect () {
+            const value = 1
+            setTimeout(() => {
+              return value
+            })
+          }
+          
+          console.log(ordinary()) // 1
+          console.log(sideEffect()) // undefined
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-x='-2000'
+      data-rotate-z='90'
+      id='callbackTwo'
+      className='step pure-text'
+    >
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          function sideEffect (callback) {
+            const value = 1
+            setTimeout(() => {
+              // ...
+              callback(value)
+            })
+          }
+
+          sideEffect(value => {
+            console.log(value) // 1
           })
-        }
-        
-        const result = ordinary()
-        console.log(result) // 1
-        
-        const resultTwo = callback()
-        console.log(resultTwo) // undefined
-      </code>
-    </pre>
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-x='-2000'
+      data-rotate-z='90'
+      id='callbackThree'
+      styleName='title'
+      className='step pure-text'
+    >
+      <div styleName='left-title more-text'>
+        callback 让我们拥有了获取不可预测行为结果的能力
+      </div>
+      <div styleName='left-title more-text'>
+        这得益于 JavaScript 函数是一等公民的能力
+      </div>
+    </div>
   </div>
 </template>
 

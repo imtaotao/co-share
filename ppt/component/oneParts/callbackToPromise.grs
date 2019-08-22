@@ -2,10 +2,31 @@
   <div
     data-x='-6000'
     data-rotate-z='90'
+    styleName='title'
     id='callbackToPromise'
     className='step pure-text'
   >
-    callbackToPromise
+    <div styleName='left-title'>
+      通过 promise 的形式重写
+    </div>
+
+    <pre
+      v-lighlight
+      className='hljs pure-code'
+    >
+      <code >
+        // 将 callback 变成了一种扁平化的结构
+        // 相对于 callback 是更加同步的思维将代码结构铺开来
+
+        getData()
+          .then(getMoreData)
+          .then(getMoreData)
+          .then(getMoreData)
+          .then(function (d) {
+            // ...
+          })
+      </code>
+    </pre>
   </div>
 </template>
 

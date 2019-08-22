@@ -4,9 +4,10 @@
       data-x='-7000'
       data-rotate-z='90'
       id='whyChoosePromiseOne'
+      styleName='title'
       className='step pure-text'
     >
-      whyChoosePromiseOne
+      社区有几种不同的方案，为什么最后 es6 选择了 promise 方案
     </div>
 
     <div
@@ -15,7 +16,112 @@
       id='whyChoosePromiseTwo'
       className='step pure-text'
     >
-      whyChoosePromiseTwo
+    
+      <div styleName='left-title'>promise 与 deferred</div>
+
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          // deferred
+          deferred.promise.then(v => console.log(v))
+          setTimeout(() => {
+            deferred.resolve('tao')
+          }, 500)
+          
+          // promise
+          const p = new Promise(resolve => {
+            setTimeout(() => {
+              resolve('tao')
+            }, 500)
+          })
+          p.then(v => console.log(v))
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-x='-8000'
+      data-rotate-z='90'
+      id='whyChoosePromiseThree'
+      className='step pure-text'
+    >
+    
+      <div styleName='left-title'>为什么选择了 promise</div>
+  
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          // 不会捕捉到错误
+          deferred.promise.catch(reason => console.log(reason))
+
+          setTimeout(() => {
+            throw 'error'
+          })
+        </code>
+      </pre>
+    </div>
+
+     <div
+      data-x='-8000'
+      data-rotate-z='90'
+      id='whyChoosePromiseFour'
+      className='step pure-text'
+    >
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          // 必须用 try catch 然后通过 deferrd.reject 触发
+          deferred.promise.catch(reason => console.log(reason))
+
+          setTimeout(() => {
+            try {
+              throw 'error'
+            } catch (err) {
+              deferred.reject(err)
+            }
+          })
+        </code>
+      </pre>
+    </div>
+
+     <div
+      data-x='-8000'
+      data-rotate-z='90'
+      id='whyChoosePromiseFive'
+      styleName='title'
+      className='step pure-text'
+    >
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          // promise 由于是自执行，自动捕捉异常
+          const p = new Promise(() => {
+            throw 'error'
+          })
+
+          p.catch(reason => console.log(reason))
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-x='-8000'
+      data-rotate-z='90'
+      id='whyChoosePromiseSix'
+      className='step pure-text'
+      styleName='title conclusion'
+    >
+      # promise 首先应该是一个异步流程控制的解决方案，流程控制包括了正常的数据流和异常流程处理<br/>
+      # deferred 的方式存在一个致命的缺陷<br/>
+      # 就是 promise 链的第一个promise（deferred.promise）的触发阶段抛出的异常是不交由 promise 自动处理的
     </div>
   </div>
 </template>

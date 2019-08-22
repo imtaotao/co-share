@@ -1,0 +1,125 @@
+<template>
+  <div>
+    <div
+      data-x='-12000'
+      data-rotate-z='90'
+      styleName='title'
+      id='autoActuatorTestOne'
+      className='step pure-text'
+    >
+      <div styleName='left-title'>看看效果</div>
+
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          const ret = co(function * () {
+            const a = yield 1
+            const b = yield a + 1
+            const c = yield b + 1
+            const d = yield c + 1
+            return d
+          })
+          ret.then(v => console.log(v)) // 4
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-x='-12000'
+      data-rotate-z='90'
+      styleName='title'
+      id='autoActuatorTestTwo'
+      className='step pure-text'
+    >
+      <div styleName='left-title'>结合 promise</div>
+
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          const fn = v => new Promise(resolve => setTimeout(() => resolve(v + 1)))
+  
+          const ret = co(function * () {
+            const a = yield fn(1)
+            console.log(a) // 2
+
+            const b = yield fn(a)
+            console.log(b) // 3
+
+            const c = yield fn(b)
+            console.log(c) // 4
+
+            const d = yield fn(c)
+            console.log(d) // 5
+
+            return d
+          })
+          
+          ret.then(v => console.log(v)) // 5
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-x='-12000'
+      data-rotate-z='90'
+      styleName='title'
+      id='autoActuatorTestThree'
+      className='step pure-text'
+    >
+      <div styleName='left-title'>error 的处理</div>
+
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          // 错误都能被捕捉
+          const ret = co(function * () {
+            try {
+              throw 'errorOne'
+            } catch (err) {
+              console.log(err) // errorOne
+              throw 'errorTwo'
+            }
+          })
+
+          ret.catch(err => console.log(err)) // errorTwo
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-x='-13000'
+      data-rotate-z='90'
+      styleName='title'
+      id='autoActuatorTestFour'
+      className='step pure-text'
+    >
+      看起来是不是比 promise 的写法“同步”多了~
+    </div>
+
+    <div
+      data-x='-13000'
+      data-rotate-z='90'
+      styleName='title'
+      id='autoActuatorTestFive'
+      className='step pure-text'
+    >
+      够了吗？当然还不够
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('./style.css')
+  module.exports = Grass.CSSModules(style)(
+    class AutoActuatorTest extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

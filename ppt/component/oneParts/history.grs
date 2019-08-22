@@ -5,7 +5,27 @@
     data-rotate-z='90'
     className='step pure-text'
   >
-    history
+    <div styleName='history-title'>发展历程</div>
+
+    <div styleName='history-item'>
+      <div className='pure-text'>callback</div>
+      <img src='ppt/assets/arrow.svg' />
+    </div>
+    <div styleName='history-item'>
+      <div className='pure-text'>deferred (promise)</div>
+      <img src='ppt/assets/arrow.svg' />
+    </div>
+    <div styleName='history-item'>
+      <div className='pure-text'>promise</div>
+      <img src='ppt/assets/arrow.svg' />
+    </div>
+    <div styleName='history-item'>
+      <div className='pure-text'>generator + promise</div>
+      <img src='ppt/assets/arrow.svg' />
+    </div>
+    <div styleName='history-item'>
+      <div className='pure-text'>async/await</div>
+    </div>
   </div>
 </template>
 

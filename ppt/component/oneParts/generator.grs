@@ -6,25 +6,66 @@
       id='generatorOne'
       className='step pure-text'
     >
-      generatorOne
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code >
+          const getData = () => {
+            return new Promise(resolve => resolve(1))
+          }
+
+          const getMoreData = value => {
+            return value + 1
+          }
+
+          getData()
+            .then(getMoreData)
+            .then(getMoreData)
+            .then(getMoreData)
+            .then(value => {
+              console.log(value) // 4
+            })
+        </code>
+      </pre>
     </div>
 
     <div
-      data-x='-11000'
+      data-x='-10000'
       data-rotate-z='90'
       id='generatorTwo'
       className='step pure-text'
     >
-      generatorTwo
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code >
+          const gen = (function * () {
+            const a = yield 1
+            const b = yield a + 1
+            const c = yield b + 1
+            const d = yield c + 1
+            return d
+          })()
+
+          const a = gen.next()
+          const b = gen.next(a.value)
+          const c = gen.next(b.value)
+          const d = gen.next(c.value)
+          console.log(d.value) // 4
+        </code>
+      </pre>
     </div>
 
     <div
-      data-x='-12000'
+      data-x='-10000'
       data-rotate-z='90'
       id='generatorThree'
+      styleName='title'
       className='step pure-text'
     >
-      generatorThree
+      但是需要手动调用 gen.next()，肯定不能忍，怎么办~
     </div>
   </div>
 </template>

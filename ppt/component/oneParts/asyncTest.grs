@@ -1,11 +1,54 @@
 <template>
-  <div
-    id='asyncTest'
-    data-x='-16000'
-    data-rotate-z='90'
-    className='step pure-text'
-  >
-    AsyncTest
+  <div>
+    <div
+      data-x='-16000'
+      data-rotate-z='90'
+      id='asyncTestOne'
+      styleName='title'
+      className='step pure-text'
+    >
+      <div styleName='left-title more-text'>
+        async 函数作为被纳入 ES 规范的语法，自然会随着引擎不断优化迭代，肯定会比我们自己写执行器要更好
+      </div>
+      <div styleName='left-title more-text'>
+        我们稍微探究一下 async 函数~
+      </div>
+    </div>
+
+    <div
+      data-x='-16000'
+      data-rotate-z='90'
+      id='asyncTestTwo'
+      className='step pure-text'
+    >
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          // 将会打印 'into'
+          // 这表明 async 函数会在 promise 后面添加 p.then() 的行为
+          // 这无关 promise 是哪一种实现（theable 也是可以的）
+
+          const p = {
+            then (resolve, reject) {
+              console.log('into')
+              setTimeout(() => resolve('tao'), 1000)
+              // reject('err')
+            }
+          }
+
+          (async function () {
+            try {
+              const v = await p
+              console.log(v)
+            } catch (err) {
+              console.log(err)
+            }
+          })()
+        </code>
+      </pre>
+    </div>
   </div>
 </template>
 

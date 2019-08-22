@@ -1,0 +1,59 @@
+.small {
+  margin-top: 40px;
+  font-size: 25px;
+}
+
+.title {
+  font-size: 50px;
+  text-align: center;
+}
+
+.title div {
+  margin: 60px 0;
+}
+
+.title p {
+  font-size: 32px;
+}
+
+.history-title {
+  font-size: 30px;
+  left: 0;
+}
+
+.history-item {
+  margin: 25px 0;
+  text-align: center;
+}
+
+.history-item :global(.pure-text) {
+  font-size: 50px !important;
+}
+
+.history-item div {
+  margin-bottom: 25px;
+}
+
+.history-item img {
+  transform: rotate(-90deg);
+}
+
+.left-title {
+  text-align: left;
+}
+
+.conclusion {
+  font-size: 30px;
+  text-align: left;
+  line-height: 60px;
+}
+
+.conclusion li {
+  margin: 40px 0;
+}
+
+.more-text {
+  font-size: 35px;
+  line-height: 90px;
+  text-align: center;
+}

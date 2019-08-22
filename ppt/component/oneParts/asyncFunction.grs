@@ -1,11 +1,103 @@
 <template>
-  <div
-    data-x='-15000'
-    data-rotate-z='90'
-    id='asyncFunction'
-    className='step pure-text'
-  >
-    AsyncFunction
+  <div>
+    <div
+      data-x='-15000'
+      data-rotate-z='90'
+      id='asyncFunctionOne'
+      styleName='title'
+      className='step pure-text'
+    >
+      <div styleName='left-title more-text'>
+        ES2017 标准引入了 async 函数，使得异步操作变得更加方便
+      </div>
+      <div styleName='left-title more-text'>
+        async 函数是什么？它就是 Generator 函数的语法糖
+      </div>
+    </div>
+
+    <div
+      data-x='-15000'
+      data-rotate-z='90'
+      id='asyncFunctionTwo'
+      className='step pure-text'
+    >
+      <div styleName='left-title'>做个对比，理解一下为什么说是语法糖</div>
+
+      <pre
+        v-lighlight
+        className='hljs pure-code half'
+      >
+        <code >
+          const ret = (async function () {
+            const a = await fn(1)
+            const b = await fn(a)
+            const c = await fn(b)
+            const d = await fn(c)
+            return d
+          })()
+
+          ret.then(v => console.log(v))
+        </code>
+      </pre>
+
+       <pre
+        v-lighlight
+        className='hljs pure-code half'
+      >
+        <code >
+          const ret = co(function * () {
+            const a = yield fn(1)
+            const b = yield fn(a)
+            const c = yield fn(b)
+            const d = yield fn(c)
+            return d
+          })
+
+          ret.then(v => console.log(v))
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-x='-15000'
+      data-rotate-z='90'
+      id='asyncFunctionThree'
+      className='step pure-text'
+    >
+      <pre
+        v-lighlight
+        className='hljs pure-code half'
+      >
+        <code >
+          const ret = (async function () {
+            try {
+              throw 'errorOne'
+            } catch (err) {
+              console.log(err)
+              throw 'errorTwo'
+            }
+          })()
+          ret.catch(err => console.log(err))
+        </code>
+      </pre>
+
+       <pre
+        v-lighlight
+        className='hljs pure-code half'
+      >
+        <code >
+          const ret = co(function * () {
+            try {
+              throw 'errorOne'
+            } catch (err) {
+              console.log(err)
+              throw 'errorTwo'
+            }
+          })
+          ret.catch(err => console.log(err))
+        </code>
+      </pre>
+    </div>
   </div>
 </template>
 

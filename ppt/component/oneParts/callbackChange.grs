@@ -1,11 +1,49 @@
 <template>
-  <div
-    data-x='-4000'
-    data-rotate-z='90'
-    id='callbackChange'
-    className='step pure-text'
-  >
-    callbackChange
+  <div>
+    <div
+      data-x='-4000'
+      data-rotate-z='90'
+      id='callbackHellOne'
+      styleName='title'
+      className='step pure-text'
+    >
+      <div styleName='left-title'>封装抽象</div>
+
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          // 需要合理的封装和简化，这需要开发人员自身的水平和认知决定
+          function fn (a, cb) {
+            getMoreData(a, function (b) {
+              getMoreData(b, function (c) {
+                getMoreData(c, function (d) {
+                  cb(d)
+                })
+              })
+            })
+          }
+
+          // 通过层层封装，抽象出模块和通用的类来保证代码是浅层的
+          getData(function (a) {
+            fn(a, function (d) {
+              // ...
+            })
+          })
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-x='-4000'
+      data-rotate-z='90'
+      id='callbackHellTwo'
+      styleName='title'
+      className='step pure-text'
+    >
+      bug 在封装和简化的过程中很容易产生~
+    </div>
   </div>
 </template>
 

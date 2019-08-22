@@ -4,7 +4,7 @@
       styleName='github-icon'
       href='https://github.com/imtaotao/co-share'
     >
-      <img src='./img/github.svg' />
+      <img src='ppt/assets/github.svg' />
     </a>
 
     <div id='impress'>
@@ -17,12 +17,12 @@
         className='step'
         styleName='title'
       >
-        <h1 className='center'>co.js 源码解读 <sup>*</sup> </h1>
+        <h1 className='center'>Js 异步交互历程及 co.js 源码解读<sup>*</sup> </h1>
         <h3
           className='center'
           styleName='author'
         >
-          <span> —— By chentao</span>
+          <span> —— by chentao</span>
         </h3>
       </div>
       
@@ -50,6 +50,9 @@
 
       <!-- 第一部分的 -->
       <OneParts />
+
+      <!-- 第二部分的 -->
+      <TwoParts />
     </div>
   </div>
 </template>
@@ -62,6 +65,7 @@
     // #temp
     component = {
       OneParts: require('@comp/oneParts/index'),
+      TwoParts: require('@comp/twoParts/index'),
       Directory: require('@comp/directory/index'),
     }
   }

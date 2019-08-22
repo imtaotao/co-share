@@ -5,7 +5,7 @@ body {
 
 @font-face {
   font-family: xihei;
-  src: url('../font/方正兰亭超细黑简体.ttf');
+  src: url('./ppt/assets/方正兰亭超细黑简体.ttf');
 }
 
 /* 该类添加在还未展示的步骤结点，当该元素被导航时会自动删除future类，显示页面 */
@@ -25,7 +25,7 @@ body {
 
 .step {
   opacity: 0;
-  width: 80vw;
+  width: 85vw;
   font-size: 30px;
   transition: all 0.5s;
 }
@@ -48,6 +48,27 @@ body {
   background: rgb(49, 54, 64);
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 8px;
+  background: -webkit-gradient(linear,left top, right bottom, from(#485563), to(#29323c));
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 8px;
+  background-color: rgba(125, 125, 125, 0.7);
+  -webkit-border-radius: 6px;
+}
+
 .center {
   display: flex;
   align-items: center;
@@ -56,12 +77,23 @@ body {
 
 .pure-text {
   font-size: 60px;
-  color: #cacaca;
+  color: #e7edf1;
   font-family: xihei;
   font-weight: bold;
 }
 
 .pure-code code {
-  font-size: 25px;
+  font-size: 35px;
+  text-align: left;
   font-weight: bold;
+}
+
+.half {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+}
+
+.link {
+  color: #94d6e9;
 }
