@@ -82,7 +82,7 @@
         callback 让我们拥有了获取不可预测行为结果的能力
       </div>
       <div styleName='left-title more-text'>
-        这得益于 JavaScript 函数是一等公民的能力
+        这得益于 JavaScript 函数是一等公民
       </div>
     </div>
   </div>
