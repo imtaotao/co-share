@@ -1,8 +1,3 @@
-body {
-  margin: 0;
-  background: rgb(49, 54, 64);
-}
-
 @font-face {
   font-family: xihei;
   src: url('./ppt/assets/方正兰亭超细黑简体.ttf');
