@@ -32,7 +32,7 @@
       CallbackHell: require('./callbackHell'),
       AsyncFunction: require('./asyncFunction'),
       CallbackChange: require('./callbackChange'),
-      AutoActuatorTest: require('./AutoActuatorTest'),
+      AutoActuatorTest: require('./autoActuatorTest'),
       WhyChoosePromise: require('./whyChoosePromise'),
       CallbackToPromise: require('./callbackToPromise'),
       PromiseChangeToDeferred: require('./promiseChangeToDeferred'),
