@@ -23,7 +23,7 @@
         >
           全屏
         </div>
-        <h1 className='center'>Js 异步交互历程及 co.js 源码解读<sup>*</sup> </h1>
+        <h1 className='center'>co.js 源码解读<sup>*</sup> </h1>
         <h3
           className='center'
           styleName='author'
