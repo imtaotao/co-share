@@ -17,6 +17,12 @@
         className='step'
         styleName='title'
       >
+        <div
+          styleName='full-screen'
+          @click='this.launchFullscreen.bind(this)'
+        >
+          全屏
+        </div>
         <h1 className='center'>Js 异步交互历程及 co.js 源码解读<sup>*</sup> </h1>
         <h3
           className='center'
@@ -60,13 +66,26 @@
 <script>
   const Grass = require('@Grass')
   const style = require('./style.css')
+  const { launchFullscreen } = require('../../index.js')
 
   class Root extends Grass.Component {
     // #temp
+    state = {
+      text: '全屏',
+    }
+
     component = {
       OneParts: require('@comp/oneParts/index'),
       TwoParts: require('@comp/twoParts/index'),
       Directory: require('@comp/directory/index'),
+    }
+
+    launchFullscreen () {
+      if (document.fullscreenElement) {
+        document.exitFullscreen()
+      } else {
+        document.documentElement.requestFullscreen()
+      }
     }
   }
   module.exports = Grass.CSSModules(style)(Root)

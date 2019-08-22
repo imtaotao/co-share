@@ -4,7 +4,7 @@
       data-x='-3000'
       data-rotate-z='90'
       styleName='title'
-      id='callbackHell'
+      id='callbackHellOne'
       className='step pure-text'
     >
       但是 callback 带来了很严重的语法层面上的问题
@@ -14,7 +14,7 @@
       data-x='-3000'
       data-rotate-z='90'
       styleName='title'
-      id='callbackHell'
+      id='callbackHellTwo'
       className='step pure-text'
     >
       <div styleName='left-title'>callback 地狱</div>

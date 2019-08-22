@@ -13,21 +13,21 @@
         v-lighlight
         className='hljs pure-code half'
       >
-        <code >
-          xhr.get('xx', data, res => {
-            console.log(res)
-          })
-        </code>
+<code >
+xhr.get('xx', data, res => {
+  console.log(res)
+})
+</code>
       </pre>
 
       <pre
         v-lighlight
         className='hljs pure-code half'
       >
-        <code >
-        const res = await xhr.get('xx', data)
-        console.log(res)
-        </code>
+<code >
+const res = await xhr.get('xx', data)
+console.log(res)
+</code>
       </pre>
     </div>
 
@@ -39,7 +39,7 @@
       styleName='title conclusion'
     >
       # 我们为什么需要 callback<br/>
-      # callback 带来的问题<br/>
+      # callback 带来的问题是什么<br/>
       # 社区给了解决方案并最终被规范所接纳<br/>
       # promise + generator 带来更极致的异步编程体验<br/>
       # async/await 语法糖更加强化这一体验<br/>

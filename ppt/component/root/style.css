@@ -28,3 +28,18 @@
   margin-left: 1200px;
   font-family: xihei;
 }
+
+.full-screen {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 22px;
+  text-align: center;
+  left: 0;
+  top: 0;
+  background: #444859;
+  color: #6b7d8f;
+  position: fixed;
+  cursor: pointer;
+  border-radius: 50%;
+}

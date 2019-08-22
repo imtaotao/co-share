@@ -13,6 +13,7 @@
     <div
       data-x='-8000'
       data-rotate-z='90'
+      styleName='title'
       id='whyChoosePromiseTwo'
       className='step pure-text'
     >
@@ -44,6 +45,7 @@
     <div
       data-x='-8000'
       data-rotate-z='90'
+      styleName='title'
       id='whyChoosePromiseThree'
       className='step pure-text'
     >

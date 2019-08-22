@@ -18,6 +18,7 @@
     <div
       data-x='-15000'
       data-rotate-z='90'
+      styleName='title'
       id='asyncFunctionTwo'
       className='step pure-text'
     >
@@ -27,34 +28,34 @@
         v-lighlight
         className='hljs pure-code half'
       >
-        <code >
-          const ret = (async function () {
-            const a = await fn(1)
-            const b = await fn(a)
-            const c = await fn(b)
-            const d = await fn(c)
-            return d
-          })()
+<code >
+const ret = (async function () {
+  const a = await fn(1)
+  const b = await fn(a)
+  const c = await fn(b)
+  const d = await fn(c)
+  return d
+})()
 
-          ret.then(v => console.log(v))
-        </code>
+ret.then(v => console.log(v))
+</code>
       </pre>
 
        <pre
         v-lighlight
         className='hljs pure-code half'
       >
-        <code >
-          const ret = co(function * () {
-            const a = yield fn(1)
-            const b = yield fn(a)
-            const c = yield fn(b)
-            const d = yield fn(c)
-            return d
-          })
+<code >
+const ret = co(function * () {
+  const a = yield fn(1)
+  const b = yield fn(a)
+  const c = yield fn(b)
+  const d = yield fn(c)
+  return d
+})
 
-          ret.then(v => console.log(v))
-        </code>
+ret.then(v => console.log(v))
+</code>
       </pre>
     </div>
 
@@ -68,34 +69,34 @@
         v-lighlight
         className='hljs pure-code half'
       >
-        <code >
-          const ret = (async function () {
-            try {
-              throw 'errorOne'
-            } catch (err) {
-              console.log(err)
-              throw 'errorTwo'
-            }
-          })()
-          ret.catch(err => console.log(err))
-        </code>
+<code >
+const ret = (async function () {
+  try {
+    throw 'errorOne'
+  } catch (err) {
+    console.log(err)
+    throw 'errorTwo'
+  }
+})()
+ret.catch(err => console.log(err))
+</code>
       </pre>
 
        <pre
         v-lighlight
         className='hljs pure-code half'
       >
-        <code >
-          const ret = co(function * () {
-            try {
-              throw 'errorOne'
-            } catch (err) {
-              console.log(err)
-              throw 'errorTwo'
-            }
-          })
-          ret.catch(err => console.log(err))
-        </code>
+<code >
+const ret = co(function * () {
+  try {
+    throw 'errorOne'
+  } catch (err) {
+    console.log(err)
+    throw 'errorTwo'
+  }
+})
+ret.catch(err => console.log(err))
+</code>
       </pre>
     </div>
   </div>

@@ -3,6 +3,7 @@
     <div
       data-x='-11000'
       data-rotate-z='90'
+      styleName='title'
       id='autoActuatorOne'
       className='step pure-text'
     >

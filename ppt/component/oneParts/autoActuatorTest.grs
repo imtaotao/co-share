@@ -37,11 +37,11 @@
 
       <pre
         v-lighlight
+        style='font-size: 1px;'
         className='hljs pure-code'
       >
         <code>
           const fn = v => new Promise(resolve => setTimeout(() => resolve(v + 1)))
-  
           const ret = co(function * () {
             const a = yield fn(1)
             console.log(a) // 2
@@ -57,7 +57,6 @@
 
             return d
           })
-          
           ret.then(v => console.log(v)) // 5
         </code>
       </pre>

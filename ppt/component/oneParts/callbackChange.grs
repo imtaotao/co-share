@@ -3,12 +3,10 @@
     <div
       data-x='-4000'
       data-rotate-z='90'
-      id='callbackHellOne'
+      id='callbackHellChangeOne'
       styleName='title'
       className='step pure-text'
     >
-      <div styleName='left-title'>封装抽象</div>
-
       <pre
         v-lighlight
         className='hljs pure-code'
@@ -38,7 +36,7 @@
     <div
       data-x='-4000'
       data-rotate-z='90'
-      id='callbackHellTwo'
+      id='callbackHellChangeTwo'
       styleName='title'
       className='step pure-text'
     >

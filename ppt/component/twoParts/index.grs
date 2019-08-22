@@ -17,11 +17,7 @@
       </div>
 
       <div styleName='left-title more-text'>
-        co 这个库是 TJ 大神为 koa 框架编写的一个基于 generator + promise 处理异步行为的库
-      </div>
-
-      <div styleName='left-title more-text'>
-        这种结合带来了强大的异步交互能力，可以显着改进在 ECMAScript 中编写异步代码的语言级模型。这对于基于 nodeJs 的事情驱动程序来说，真是福音。并且为
+        co 这个库是 TJ 大神为 koa 框架编写的一个基于 generator + promise 处理异步行为的库。这种结合带来了强大的异步交互能力，可以显着改进在 ECMAScript 中编写异步代码的语言级模型。这对于基于 nodeJs 的事情驱动程序来说，真是福音。并且为
         <a
           className='link'
           href='https://github.com/tc39/ecmascript-asyncawait'
@@ -32,7 +28,7 @@
       </div>
 
       <div styleName='left-title more-text'>
-        我们跟着源码来读一下
+        # 我们跟着源码来读一下
       </div>
     </div>
   </div>
