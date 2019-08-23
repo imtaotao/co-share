@@ -2,7 +2,7 @@
   <div>
     <div
       data-y='3000'
-      data-x='-17000'
+      data-x='-18000'
       data-rotate-z='90'
       id='coAnlysissOne'
       className='step pure-text'
@@ -31,15 +31,27 @@
         # 我们跟着源码来读一下
       </div>
     </div>
+
+    <!-- 内容 -->
+    <ToPromise />
+    <Theable />
+    <ObjectToPromise />
+    <Summary />
   </div>
 </template>
 
 <script>
   const Grass = require('@Grass')
-  const style = require('./style.css')
+  const style = require('../style.css')
   module.exports = Grass.CSSModules(style)(
     class CoAnlysiss extends Grass.Component {
       // #temp
+      component = {
+        Theable: require('./theable'),
+        Summary: require('./summary'),
+        ToPromise: require('./toPromise'),
+        ObjectToPromise: require('./objectToPromise'),
+      }
     }
   )
 </script>

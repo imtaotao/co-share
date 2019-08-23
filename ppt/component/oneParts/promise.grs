@@ -13,7 +13,7 @@
 
 <script>
   const Grass = require('@Grass')
-  const style = require('./style.css')
+  const style = require('../style.css')
   module.exports = Grass.CSSModules(style)(
     class PromiseShow extends Grass.Component {
       // #temp

@@ -41,7 +41,7 @@
 
 <script>
   const Grass = require('@Grass')
-  const style = require('./style.css')
+  const style = require('../style.css')
   module.exports = Grass.CSSModules(style)(
     class PromiseChangeToDeferred extends Grass.Component {
       // #temp

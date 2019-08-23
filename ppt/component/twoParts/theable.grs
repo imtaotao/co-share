@@ -1,0 +1,23 @@
+<template>
+  <div>
+    <div
+      data-y='3000'
+      data-x='-20000'
+      data-rotate-z='90'
+      id='theable'
+      className='step pure-text'
+    >
+      Theable
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('../style.css')
+  module.exports = Grass.CSSModules(style)(
+    class Theable extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

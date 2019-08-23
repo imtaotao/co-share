@@ -8,10 +8,10 @@
       className='step pure-text'
     >
       <div styleName='left-title more-text'>
-        如果一个函数无法无法立即返回 value，而是经过一段不可预测的行为时间之后（副作用），才能得到 value
+        如果一个函数无法立即返回 value，而是经过一段不可预测的行为时间之后（副作用），才能得到 value
       </div>
       <div styleName='left-title more-text'>
-        我们要如何做？
+        我们要如何做才能获得 value？
       </div>
     </div>
 
@@ -82,7 +82,7 @@
         callback 让我们拥有了获取不可预测行为结果的能力
       </div>
       <div styleName='left-title more-text'>
-        这得益于 JavaScript 函数是一等公民的能力
+        这得益于 JavaScript 函数是一等公民
       </div>
     </div>
   </div>
@@ -90,7 +90,7 @@
 
 <script>
   const Grass = require('@Grass')
-  const style = require('./style.css')
+  const style = require('../style.css')
   module.exports = Grass.CSSModules(style)(
     class Callback extends Grass.Component {
       // #temp

@@ -138,6 +138,7 @@ function isPromise(obj) {
   return 'function' == typeof obj.then;
 }
 
+// 只要你部署了遍历器接口，需要 throw 是因为要 try/catch 捕捉到
 function isGenerator(obj) {
   return 'function' == typeof obj.next && 'function' == typeof obj.throw;
 }
@@ -150,6 +151,7 @@ function isGeneratorFunction(obj) {
   return isGenerator(constructor.prototype);
 }
 
+// 只处理 {}
 function isObject(val) {
   return Object == val.constructor;
 }

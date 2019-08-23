@@ -1,0 +1,23 @@
+<template>
+  <div>
+    <div
+      data-y='3000'
+      data-x='-19000'
+      data-rotate-z='90'
+      id='toPromiseOne'
+      className='step pure-text'
+    >
+      ToPromise
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('../style.css')
+  module.exports = Grass.CSSModules(style)(
+    class ToPromise extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

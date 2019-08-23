@@ -123,14 +123,14 @@
     >
       # promise 首先应该是一个异步流程控制的解决方案，流程控制包括了正常的数据流和异常流程处理<br/>
       # deferred 的方式存在一个致命的缺陷<br/>
-      # 就是 promise 链的第一个promise（deferred.promise）的触发阶段抛出的异常是不交由 promise 自动处理的
+      # 就是 promise 链的第一个 promise（deferred.promise）的触发阶段抛出的异常是不交由 promise 自动处理的
     </div>
   </div>
 </template>
 
 <script>
   const Grass = require('@Grass')
-  const style = require('./style.css')
+  const style = require('../style.css')
   module.exports = Grass.CSSModules(style)(
     class WhyChoosePromise extends Grass.Component {
       // #temp
