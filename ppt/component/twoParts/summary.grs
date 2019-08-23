@@ -110,13 +110,13 @@
             export default {
               data: () => ({
                 message: '',
-                requestId: null,
+                requestId: 0,
               }),
 
               methods: {
                 // 利用闭包拒绝掉已经丢弃的副作用行为
                 async getMessage () {
-                  const id = this.requestId = Math.random()
+                  const id = ++this.requestId
                   const res = await xhr.get('xx')
 
                   if (id !== this.requestId) return
