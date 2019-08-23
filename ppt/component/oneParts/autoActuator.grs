@@ -77,8 +77,8 @@
             try {
               result = gen.throw(err)
               next(result)
-            } catch (e) {
-              return reject(e)
+            } catch (err) {
+              return reject(err)
             }
           }
         </code>
@@ -105,7 +105,7 @@
             // 如果是 generator 函数，等待整个 generator 函数执行完毕
             if (
                 value && value.constructor && 
-                alue.constructor.name === 'GeneratorFunction'
+                value.constructor.name === 'GeneratorFunction'
             ) {
               value = co(value)
             }
