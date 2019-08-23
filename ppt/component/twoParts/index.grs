@@ -60,7 +60,7 @@
         Theable: require('./theable'),
         Summary: require('./summary'),
         ToPromise: require('./toPromise'),
-        ArrayToPromise: require('./ArrayToPromise'),
+        ArrayToPromise: require('./arrayToPromise'),
         ObjectToPromise: require('./objectToPromise'),
       }
     }

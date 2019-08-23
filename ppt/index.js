@@ -1,10 +1,3 @@
-
-// 删除不支持的信息
-const notSupport = document.getElementById('notSupport')
-if (notSupport) {
-  notSupport.parentNode.removeChild(notSupport)
-}
-
 require('./global.css')
 const Grass = require('@Grass')
 const Root = require('@comp/root/index')
