@@ -26,6 +26,7 @@
 
       <pre
         v-lighlight
+        styleName='small-code'
         className='hljs pure-code half'
       >
 <code >
@@ -43,6 +44,7 @@ ret.then(v => console.log(v))
 
        <pre
         v-lighlight
+        styleName='small-code'
         className='hljs pure-code half'
       >
 <code >
@@ -67,6 +69,7 @@ ret.then(v => console.log(v))
     >
       <pre
         v-lighlight
+        styleName='small-code'
         className='hljs pure-code half'
       >
 <code >
@@ -84,6 +87,7 @@ ret.catch(err => console.log(err))
 
        <pre
         v-lighlight
+        styleName='small-code'
         className='hljs pure-code half'
       >
 <code >

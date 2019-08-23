@@ -28,7 +28,12 @@
           className='center'
           styleName='author'
         >
-          <span> —— by chentao</span>
+          <span> —— by 
+            <a
+              className='link'
+              href='https://github.com/imtaotao'
+            >Imtaoao</a>
+          </span>
         </h3>
       </div>
       

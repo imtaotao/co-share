@@ -2,12 +2,94 @@
   <div>
     <div
       data-y='3000'
-      data-x='-20000'
+      data-x='-22000'
       data-rotate-z='90'
-      id='theable'
+      id='theableOne'
+      styleName='title'
       className='step pure-text'
     >
-      Theable
+      <div styleName='left-title'>为什么要这样判断是否是 promise</div>
+
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          function isPromise (obj) {
+            return 'function' == typeof obj.then
+          }
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-y='3000'
+      data-x='-22000'
+      data-rotate-z='90'
+      id='theableTwo'
+      styleName='title'
+      className='step pure-text'
+    >
+      <div styleName='left-title'>
+        Theable 和 鸭子类型
+      </div>
+
+      <div styleName='left-title more-text'>
+        如果一个对象 x 有一个 then 方法，那么 x 就是一个 thenable
+      </div>
+      <div styleName='left-title more-text'>
+        then 会被立即调用，传入参数 resolve 和 reject，并绑定 x 作为 this
+      </div>
+      <div styleName='left-title more-text'>
+        而 thenable 就是 promise 的
+        <a
+          className='link'
+          href='https://zh.wikipedia.org/wiki/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B'
+        >鸭子类型</a>
+      </div>
+    </div>
+
+    <div
+      data-y='3000'
+      data-x='-22000'
+      data-rotate-z='90'
+      id='theableThree'
+      styleName='title'
+      className='step pure-text'
+    >
+      <a
+        styleName='portal'
+        href='#/asyncTestTwo'
+      >
+        传
+      </a>
+      <div styleName='left-title'>所以有了下面的写法</div>
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          Promise.resolve({
+            then (resolve, reject) {
+              resolve(1)
+            }
+          })
+          .then(res => {
+            console.log(res) // 1
+          })
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-y='3000'
+      data-x='-22000'
+      data-rotate-z='90'
+      id='theableFour'
+      styleName='title'
+      className='step pure-text'
+    >
+      我们不需要判断是不是一个 promsie，只需要判断像不像一个 promise
     </div>
   </div>
 </template>

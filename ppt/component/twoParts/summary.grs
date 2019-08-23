@@ -2,12 +2,74 @@
   <div>
     <div
       data-y='3000'
-      data-x='-22000'
+      data-x='-24000'
       data-rotate-z='90'
-      id='twoSummary'
+      id='twoSummaryOne'
+      className='step pure-text'
+      styleName='title conclusion'
+    >
+      # co 在整个 Js 的异步发展历史中处于一个很关键的节点<br/>
+      # co 将 promise 和 generator 函数结合在一起，给了 Js 更加强大的生命力<br/>
+      # 到最后的发展阶段，我们有了控制异步行为更好的手段，这让我们能更好的结合函数式编程<br/>
+      # Js 的异步与各个平台的 event loop 息息相关，不同平台的行为可能不一致（后话）<br/>
+      # Js 的异步发展是 ES 规范中很重要的一部分，但是 es6 的发展也包含了其他，例如：<br/>
+        <div styleName='sub-conclusion'>
+          # 更好的数据结构（map，set，weakmap，weakset）<br/>
+          # 更好的遍历手段（for/of + iterator）<br/>
+          # 更好的数据保护机制（setter/getter -> proxy/reflect）<br/>
+          # 更好的 TypeArray 支持（音视频等）<br/>
+          # 当然 es 也在继续发展，未来还会有更多的新东西<br/>
+        </div>
+    </div>
+
+    <div
+      data-y='3000'
+      data-x='-24000'
+      data-rotate-z='90'
+      id='twoSummaryTwo'
+      styleName='title'
       className='step pure-text'
     >
-      Summary
+      如果理解了，请少写点这样的 bug
+    </div>
+
+    <div
+      data-y='3000'
+      data-x='-24000'
+      data-rotate-z='90'
+      id='twoSummaryThree'
+      styleName='title'
+      className='step pure-text'
+    >
+      <pre
+        v-lighlight
+        styleName='small-code'
+        className='hljs pure-code'
+      >
+        <code>
+          {{ codeOne }}
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-y='3000'
+      data-x='-24000'
+      data-rotate-z='90'
+      id='twoSummaryFour'
+      styleName='title'
+      className='step pure-text'
+    >
+      <div styleName='left-title bottom-letter'>可以改成这样</div>
+      <pre
+        v-lighlight
+        styleName='small-code'
+        className='hljs pure-code'
+      >
+        <code>
+          {{ codeTwo }}
+        </code>
+      </pre>
     </div>
   </div>
 </template>
@@ -18,6 +80,53 @@
   module.exports = Grass.CSSModules(style)(
     class Summary extends Grass.Component {
       // #temp
+      state = {
+        codeOne: `<template.>
+            <div @click='getMessage'></div>
+          </template.>
+
+          <script>
+            export default {
+              data: () => ({
+                message: '',
+              }),
+
+              methods: {
+                // 问题在于异步请求是副作用，我们无法预测这个结果在什么时间到来
+                // 导致我们无法保证程序的顺序。同样也很难复现，同样的输入可能导致不同的输出
+                async getMessage () {
+                  this.message = await xhr.get('xx')
+                }
+              }
+            }
+          </script>
+        `,
+
+        codeTwo: `<template.>
+            <div @click='getMessage'></div>
+          </template.>
+
+          <script>
+            export default {
+              data: () => ({
+                message: '',
+                requestId: null,
+              }),
+
+              methods: {
+                // 利用闭包拒绝掉已经丢弃的副作用行为
+                async getMessage () {
+                  const id = this.requestId = Math.random()
+                  const res = await xhr.get('xx')
+
+                  if (id !== this.requestId) return
+                  this.message = res
+                }
+              }
+            }
+          </script>
+        `,
+      }
     }
   )
 </script>

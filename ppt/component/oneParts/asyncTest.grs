@@ -21,8 +21,14 @@
       id='asyncTestTwo'
       className='step pure-text'
     >
+      <a
+        styleName='portal'
+        style='top: 100px;'
+        href='#/theableTwo'
+      >传</a>
       <pre
         v-lighlight
+        styleName='small-code'
         className='hljs pure-code'
       >
         <code>

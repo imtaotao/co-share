@@ -4,10 +4,41 @@
       data-y='3000'
       data-x='-21000'
       data-rotate-z='90'
-      id='objectToPromise'
+      id='objectToPromiseOne'
       className='step pure-text'
     >
-      ObjectToPromise
+      <pre
+        v-lighlight
+        styleName='small-code'
+        className='hljs pure-code'
+        >
+        <code>{{ code }}</code>
+      </pre>
+    </div>
+
+     <div
+      data-y='3000'
+      data-x='-21000'
+      data-rotate-z='90'
+      id='objectToPromiseTwo'
+      className='step pure-text'
+    >
+    <pre
+      v-lighlight
+      className='hljs pure-code'
+      >
+      <code>
+        objectToPromise({
+          a: 1,
+          b: [2, 3],
+          c: new Promise(resolve => {
+            setTimeout(() => resolve(1), 500)
+          })
+        }).then(res => {
+          console.log(res) // { a: 1, b: [2, 3], c: 1 }
+        })
+      </code>
+    </pre>
     </div>
   </div>
 </template>
@@ -18,6 +49,36 @@
   module.exports = Grass.CSSModules(style)(
     class ObjectToPromise extends Grass.Component {
       // #temp
+
+      state = {
+        code: `
+        function objectToPromise(obj) {
+          var results = new obj.constructor()
+          var keys = Object.keys(obj)
+          var promises = []
+
+          for (var i = 0; i < keys.length; i++) {
+            var key = keys[i]
+            var promise = toPromise.call(this, obj[key])
+
+            // 这里将 object 中是 promise 的 item 筛选出来，通过 promise.all 来处理
+            if (promise && isPromise(promise)) defer(promise, key)
+            else results[key] = obj[key]
+          }
+
+          return Promise.all(promises).then(function () {
+            return results
+          })
+
+          function defer(promise, key) {
+            // js 引擎喜欢稳定的对象结构，所有预先定义（也告诉我们少用 delete 语句）
+            results[key] = undefined
+            promises.push(promise.then(function (res) {
+              results[key] = res
+            }))
+          }
+        }`
+      }
     }
   )
 </script>

@@ -1,0 +1,58 @@
+<template>
+  <div>
+    <div
+      data-y='3000'
+      data-x='-23000'
+      data-rotate-z='90'
+      id='coWrapOne'
+      styleName='title'
+      className='step pure-text'
+    >
+      <div styleName='left-title'>co.warp</div>
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          // 创建一个高阶函数
+          co.wrap = function (fn) {
+            createPromise.__generatorFunction__ = fn // 单元测试用
+            return createPromise
+            function createPromise() {
+              return co.call(this, fn.apply(this, arguments))
+            }
+          }
+        </code>
+      </pre>
+    </div>
+
+    <div
+      data-y='3000'
+      data-x='-23000'
+      data-rotate-z='90'
+      id='coWrapTwo'
+      styleName='title'
+      className='step pure-text'
+    >
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>
+          const fn = co.wrap(function * () {})
+          const gen = fn()
+        </code>
+      </pre>
+    </div>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('../style.css')
+  module.exports = Grass.CSSModules(style)(
+    class CoWrap extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

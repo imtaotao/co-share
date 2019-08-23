@@ -7,7 +7,7 @@
       id='autoActuatorOne'
       className='step pure-text'
     >
-      <div styleName='left-title'>我们写一个函数来自动执行 gen.next()</div>
+      <div styleName='left-title'>只能写一个函数自动执行 gen.next()</div>
 
       <pre
         v-lighlight

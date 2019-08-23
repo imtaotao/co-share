@@ -1,0 +1,31 @@
+<template>
+  <div
+    data-y='3000'
+    data-x='-20000'
+    data-rotate-z='90'
+    id='ArrayToPromise'
+    className='step pure-text'
+  >
+    <pre
+      v-lighlight
+      className='hljs pure-code'
+    >
+      <code>
+        // 数组种的所有 item 都做了 promise 的过滤
+        function arrayToPromise (obj) {
+          return Promise.all(obj.map(toPromise, this))
+        }
+      </code>
+    </pre>
+  </div>
+</template>
+
+<script>
+  const Grass = require('@Grass')
+  const style = require('../style.css')
+  module.exports = Grass.CSSModules(style)(
+    class ArrayToPromise extends Grass.Component {
+      // #temp
+    }
+  )
+</script>

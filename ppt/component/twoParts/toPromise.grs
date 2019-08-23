@@ -5,9 +5,90 @@
       data-x='-19000'
       data-rotate-z='90'
       id='toPromiseOne'
+      styleName='title'
       className='step pure-text'
     >
-      ToPromise
+      <div>我们只解读 next 函数</div>
+    </div>
+
+    <div
+      data-y='3000'
+      data-x='-19000'
+      data-rotate-z='90'
+      id='toPromiseTwo'
+      className='step pure-text'
+    >
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+<code>
+function next(ret) {
+  if (ret.done) return resolve(ret.value)
+  var value = toPromise.call(ctx, ret.value)
+  if (value && isPromise(value)) return value.then(onFulfilled, onRejected)
+
+  return onRejected(new TypeError(
+    'You may only yield a function, promise, generator, array, or object, '
+    + 'but the following object was passed: "' + String(ret.value) + '"')
+  )
+}
+</code>
+      </pre>
+    </div>
+
+    <div
+      data-y='3000'
+      data-x='-19000'
+      data-rotate-z='90'
+      id='toPromiseThree'
+      styleName='title'
+      className='step pure-text'
+    >
+      <div>
+<pre
+  v-lighlight
+  className='hljs pure-code'
+>
+<code>
+  function toPromise(obj) {
+    if (!obj) return obj
+    if (isPromise(obj)) return obj
+    if (isGeneratorFunction(obj) || isGenerator(obj)) return co.call(this, obj)
+    if ('function' == typeof obj) return thunkToPromise.call(this, obj)
+    if (Array.isArray(obj)) return arrayToPromise.call(this, obj)
+    if (isObject(obj)) return objectToPromise.call(this, obj)
+
+    return obj
+  }
+</code>
+</pre>
+      </div>
+    </div>
+
+    <div
+      data-y='3000'
+      data-x='-19000'
+      data-rotate-z='90'
+      id='toPromiseFour'
+      styleName='title'
+      className='step pure-text'
+    >
+      <div styleName='conclusion'>
+        通过 next 和 toPromsie 函数源码可以知道，co 只支持以下几种数据类型：
+          <pre
+            v-lighlight
+            className='hljs pure-code'
+          >
+          <code>
+            array
+            object
+            promise
+            generator
+            function（thunk function 我们不做讨论）
+          </code>
+          </pre>
+      </div>
     </div>
   </div>
 </template>

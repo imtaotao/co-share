@@ -17,7 +17,14 @@
       </div>
 
       <div styleName='left-title more-text'>
-        co 这个库是 TJ 大神为 koa 框架编写的一个基于 generator + promise 处理异步行为的库。这种结合带来了强大的异步交互能力，可以显着改进在 ECMAScript 中编写异步代码的语言级模型。这对于基于 nodeJs 的事情驱动程序来说，真是福音。并且为
+        co 这个库是
+        <a
+          className='link'
+          href='https://github.com/tj'
+        >
+          TJ
+        </a>
+        大神为 koa 框架编写的一个基于 generator + promise 处理异步行为的库。这种结合带来了强大的异步交互能力，可以显着改进在 JavaScript 中编写异步代码的语言级模型。这对于基于 nodeJs 的事件驱动程序来说，兴奋的要流泪。并且为
         <a
           className='link'
           href='https://github.com/tc39/ecmascript-asyncawait'
@@ -34,8 +41,10 @@
 
     <!-- 内容 -->
     <ToPromise />
-    <Theable />
+    <ArrayToPromise />
     <ObjectToPromise />
+    <Theable />
+    <CoWrap />
     <Summary />
   </div>
 </template>
@@ -47,9 +56,11 @@
     class CoAnlysiss extends Grass.Component {
       // #temp
       component = {
+        CoWrap: require('./coWrap'),
         Theable: require('./theable'),
         Summary: require('./summary'),
         ToPromise: require('./toPromise'),
+        ArrayToPromise: require('./ArrayToPromise'),
         ObjectToPromise: require('./objectToPromise'),
       }
     }

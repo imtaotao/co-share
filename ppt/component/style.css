@@ -59,6 +59,12 @@
   margin: 40px 0;
 }
 
+.sub-conclusion {
+  font-size: 20px;
+  line-height: 40px;
+  margin-left: 50px !important;
+}
+
 .more-text {
   font-size: 32px;
   line-height: 90px;
@@ -67,4 +73,27 @@
 
 .top-title {
   margin-bottom: 100px;
+}
+
+.small-code code {
+  font-size: 28px !important;
+}
+
+.bottom-letter {
+  margin: 120px 0 -70px 0 !important;
+}
+
+.portal {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 22px;
+  text-align: center;
+  right: 0;
+  top: 0;
+  background: #444859;
+  color: #6b7d8f;
+  position: fixed;
+  cursor: pointer;
+  border-radius: 50%;
 }

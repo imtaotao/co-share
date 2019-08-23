@@ -2,12 +2,23 @@
   <div>
     <div
       data-y='4000'
-      data-x='-22000'
+      data-x='-24000'
       data-rotate-z='90'
-      id='threeSummary'
+      id='allSummaryOne'
       className='step pure-text'
     >
-      end
+      <div styleName='qa'>Q&A</div>
+    </div>
+
+    <div
+      data-y='4000'
+      data-x='-24000'
+      data-rotate-z='90'
+      id='allSummaryTwo'
+      className='step pure-text'
+    >
+      <div styleName='end-word'>谢谢观看，希望能给你带来收获</div>
+      <div styleName='end-tag'>ended</div>
     </div>
   </div>
 </template>
