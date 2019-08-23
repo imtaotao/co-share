@@ -13,3 +13,9 @@ Grass.directive('lighlight', dom => {
 Root.$mount(document.getElementById('root'))
 // 初始化 ppt
 impress().init()
+
+// 如果 liberty 没有语法报错，删除不支持的信息
+const notSupport = document.getElementById('notSupport')
+if (notSupport) {
+  notSupport.parentNode.removeChild(notSupport)
+}

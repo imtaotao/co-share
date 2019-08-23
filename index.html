@@ -6,6 +6,10 @@
 	<title>co ppt</title>
 	<link rel="stylesheet" href="ppt/lib/highlight/highlight.css">
 	<style>
+		html {
+			font-size: 10px;
+		}
+
 		body {
 			margin: 0;
 			background: rgb(49, 54, 64);
@@ -16,17 +20,21 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
-			font-size: 25px;
+			font-size: 2rem;
 			color: #727272;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			position: fixed;
+			flex-direction: column;
 		}
 	</style>
 </head>
 <body>
-	<div id="notSupport">您的浏览器版本不支持阅览此 ppt</div>
+	<div id="notSupport">
+		<div>您的浏览器版本不支持阅览此 ppt </div>
+		<div>请在 pc 端打开</div>
+	</div>
 	<div id="root"></div>
 	<script src="ppt/lib/impress/impress.js"></script>
 	<script src="ppt/lib/highlight/highlight.pack.js"></script>
@@ -60,12 +68,6 @@
         Grass: 'https://cdn.jsdelivr.net/gh/imtaotao/Grass/dist/grass.common.js',
       },
 		})(basePATH + '/ppt/index.js')
-
-		// 如果 liberty 没有语法报错，删除不支持的信息
-		const notSupport = document.getElementById('notSupport')
-		if (notSupport) {
-			notSupport.parentNode.removeChild(notSupport)
-		}
   </script>
 </body>
 </html>
