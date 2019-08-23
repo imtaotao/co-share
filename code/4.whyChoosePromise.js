@@ -1,7 +1,6 @@
 // 社区不止有 promise 一个概念
 // 在 jQuery1.5 中就有了 deferred 的概念
 // 为什么最后选择了 promise
-// https://www.cnblogs.com/tarol/p/9042407.html
 // https://groups.google.com/forum/#!topic/bluebird-js/mUiX2-vXW2s
 // es6 提出了 new Promise() 这种构建 promise 的方式，以下是俩 demo
 // 1. promise 和 deferred 使用方式不同
