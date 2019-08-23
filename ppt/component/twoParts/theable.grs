@@ -89,7 +89,12 @@
       styleName='title'
       className='step pure-text'
     >
-      我们不需要判断是不是一个 promsie，只需要判断像不像一个 promise
+      <div styleName='left-title more-text'>
+        我们不需要判断是不是一个 promsie，只需要判断像不像一个 promise
+      </div>
+      <div styleName='left-title more-text'>
+        无论是你自己写 promsie，第三方库的 promise，还是 js 引擎实现的 promsie。这带来了良好的兼容性
+      </div>
     </div>
   </div>
 </template>
