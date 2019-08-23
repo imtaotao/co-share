@@ -65,7 +65,7 @@
       styleName='title'
       className='step pure-text'
     >
-      但是需要手动调用 gen.next()，肯定不能忍，怎么办~
+      但是需要手动调用 gen.next()，肯定不能忍，怎么办
     </div>
   </div>
 </template>

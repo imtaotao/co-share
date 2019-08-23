@@ -40,7 +40,7 @@
       styleName='title'
       className='step pure-text'
     >
-      bug 在封装和简化的过程中很容易产生~
+      bug 在封装和简化的过程中很容易产生
     </div>
   </div>
 </template>

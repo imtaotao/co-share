@@ -44,8 +44,12 @@
         id='description'
         className='step pure-text'
       >
-        <p className='center'><b>co 这个库是用来做什么的 ？</b></p>
-        <p className='center'><b>我们解读他能够获得什么 ？</b></p>
+        <div styleName='more-text'>
+          co 这个库是用来做什么的 ？
+        </div>
+        <div styleName='more-text'>
+          我们解读他能够获得什么 ？
+        </div>
       </div>
 
       <div
@@ -53,7 +57,7 @@
         data-x='500'
         className='step pure-text'
       >
-        <div className='center'>我们从 JavaScript 异步历史说起吧~</div>
+        <div styleName='history-title'>我们需要从 JavaScript 异步历史说起</div>
       </div>
 
       <!-- 目录 -->

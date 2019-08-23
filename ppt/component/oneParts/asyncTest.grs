@@ -11,7 +11,7 @@
         async 函数作为被纳入 ES 规范的语法，自然会随着引擎不断优化迭代，肯定会比我们自己写执行器要更好
       </div>
       <div styleName='left-title more-text'>
-        我们稍微探究一下 async 函数~
+        我们稍微探究一下 async 函数
       </div>
     </div>
 

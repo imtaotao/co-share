@@ -10,9 +10,23 @@
 			margin: 0;
 			background: rgb(49, 54, 64);
 		}
+
+		#notSupport {
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			font-size: 25px;
+			color: #727272;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+		}
 	</style>
 </head>
 <body>
+	<div id="notSupport">您的浏览器版本不支持阅览此 ppt</div>
 	<div id="root"></div>
 	<script src="ppt/lib/impress/impress.js"></script>
 	<script src="ppt/lib/highlight/highlight.pack.js"></script>
@@ -39,7 +53,6 @@
 
     Liberty.addPlugin('.grs', GrassPlugin)
 		Liberty.addPlugin('.grs', Liberty.plugins.jsPlugin)
-
     Liberty.init({
       exname: '.grs',
       alias: {

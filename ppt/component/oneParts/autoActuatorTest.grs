@@ -98,7 +98,7 @@
       id='autoActuatorTestFour'
       className='step pure-text'
     >
-      看起来是不是比 promise 的写法“同步”多了~
+      看起来是不是比 promise 的写法“同步”多了
     </div>
 
     <div

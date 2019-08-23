@@ -43,3 +43,14 @@
   cursor: pointer;
   border-radius: 50%;
 }
+
+.more-text {
+  font-size: 32px;
+  line-height: 90px;
+  text-align: center;
+}
+
+.history-title {
+  font-size: 45px;
+  text-align: center;
+}

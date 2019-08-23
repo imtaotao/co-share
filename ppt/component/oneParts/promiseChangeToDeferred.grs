@@ -34,7 +34,7 @@
       className='step pure-text'
       id='whyChoosePromiseSeven'
     >
-      promise 链式调用的语法还是不够同步，怎么办~
+      promise 链式调用的语法还是不够同步，怎么办
     </div>
   </div>
 </template>

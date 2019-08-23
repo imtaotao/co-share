@@ -53,7 +53,7 @@ console.log(res)
       styleName='title'
       className='step pure-text'
     >
-      <div>我们好像还没有开始讲 co ~</div>
+      <div>我们好像还没有开始讲 co</div>
     </div>
   </div>
 </template>
