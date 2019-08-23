@@ -1,3 +1,7 @@
+html {
+  font-size: 10px;
+}
+
 @font-face {
   font-family: xihei;
   src: url('./ppt/assets/方正兰亭超细黑简体.ttf');
@@ -21,7 +25,7 @@
 .step {
   opacity: 0;
   width: 85vw;
-  font-size: 30px;
+  font-size: 3rem;
   transition: all 0.5s;
 }
 
@@ -71,14 +75,14 @@
 }
 
 .pure-text {
-  font-size: 60px;
+  font-size: 6rem;
   color: #e7edf1;
   font-family: xihei, 微软雅黑;
   font-weight: bold;
 }
 
 .pure-code code {
-  font-size: 35px;
+  font-size: 3.5rem;
   text-align: left;
   font-weight: bold;
 }

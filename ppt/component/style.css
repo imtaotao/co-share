@@ -1,28 +1,28 @@
 .small {
-  margin-top: 40px;
-  font-size: 25px;
+  margin-top: 4rem;
+  font-size: 2.5rem;
 }
 
 .title {
-  font-size: 45px;
+  font-size: 4.5rem;
   text-align: center;
 }
 
 .title div {
-  margin: 20px 0;
+  margin: 2rem 0;
 }
 
 .title p {
-  font-size: 32px;
+  font-size: 3.2rem;
 }
 
 .history-title {
-  font-size: 50px;
+  font-size: 5rem;
   left: 0;
 }
 
 .history-item {
-  margin: 15px 0;
+  margin: 1.5rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,14 +30,14 @@
 }
 
 .history-item :global(.pure-text) {
-  font-size: 40px !important;
+  font-size: 4rem !important;
 }
 
 .history-item div {
-  margin-bottom: 25px;
-  border-radius: 8px;
+  margin-bottom: 2.5rem;
+  border-radius: 0.8rem;
   border: 1px solid #fff;
-  padding: 15px;
+  padding: 1.5rem;
   box-sizing: border-box;
 }
 
@@ -50,44 +50,44 @@
 }
 
 .conclusion {
-  font-size: 30px;
+  font-size: 3rem;
   text-align: left;
-  line-height: 60px;
+  line-height: 6rem;
 }
 
 .conclusion li {
-  margin: 40px 0;
+  margin: 4rem 0;
 }
 
 .sub-conclusion {
-  font-size: 20px;
-  line-height: 40px;
-  margin-left: 50px !important;
+  font-size: 2rem;
+  line-height: 4rem;
+  margin-left: 5rem !important;
 }
 
 .more-text {
-  font-size: 32px;
-  line-height: 90px;
+  font-size: 3.2rem;
+  line-height: 9rem;
   text-align: center;
 }
 
 .top-title {
-  margin-bottom: 100px;
+  margin-bottom: 10rem;
 }
 
 .small-code code {
-  font-size: 28px !important;
+  font-size: 2.8rem !important;
 }
 
 .bottom-letter {
-  margin: 120px 0 -70px 0 !important;
+  margin: 12rem 0 -7rem 0 !important;
 }
 
 .portal {
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  font-size: 22px;
+  width: 6rem;
+  height: 6rem;
+  line-height: 6rem;
+  font-size: 2.2rem;
   text-align: center;
   right: 0;
   top: 0;

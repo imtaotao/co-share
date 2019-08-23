@@ -1,12 +1,12 @@
 .sub-title {
-  font-size: 45px;
+  font-size: 4.5rem;
 }
 
 .direactory ul {
-  padding: 0 80px;
-  font-size: 30px;
+  padding: 0 8rem;
+  font-size: 3rem;
 }
 
 .direactory ul li {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
