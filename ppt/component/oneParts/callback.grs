@@ -102,10 +102,6 @@
   module.exports = Grass.CSSModules(style)(
     class Callback extends Grass.Component {
       // #temp
-
-      created () {
-        
-      }
     }
   )
 </script>
