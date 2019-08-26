@@ -1,28 +1,28 @@
 .small {
-  margin-top: 4rem;
-  font-size: 2.5rem;
+  margin-top: 0.4rem;
+  font-size: 0.25rem;
 }
 
 .title {
-  font-size: 4.5rem;
+  font-size: 0.45rem;
   text-align: center;
 }
 
 .title div {
-  margin: 2rem 0;
+  margin: 0.2rem 0;
 }
 
 .title p {
-  font-size: 3.2rem;
+  font-size: 0.32rem;
 }
 
 .history-title {
-  font-size: 5rem;
+  font-size: 0.5rem;
   left: 0;
 }
 
 .history-item {
-  margin: 1.5rem 0;
+  margin: 0.15rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,14 +30,14 @@
 }
 
 .history-item :global(.pure-text) {
-  font-size: 4rem !important;
+  font-size: 0.4rem !important;
 }
 
 .history-item div {
-  margin-bottom: 2.5rem;
-  border-radius: 0.8rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.08rem;
   border: 1px solid #fff;
-  padding: 1.5rem;
+  padding: 0.15rem;
   box-sizing: border-box;
 }
 
@@ -50,44 +50,44 @@
 }
 
 .conclusion {
-  font-size: 3rem;
+  font-size: 0.3rem;
   text-align: left;
-  line-height: 6rem;
+  line-height: 0.6rem;
 }
 
 .conclusion li {
-  margin: 4rem 0;
+  margin: 0.4rem 0;
 }
 
 .sub-conclusion {
-  font-size: 2rem;
-  line-height: 4rem;
-  margin-left: 5rem !important;
+  font-size: 0.2rem;
+  line-height: 0.4rem;
+  margin-left: 0.5rem !important;
 }
 
 .more-text {
-  font-size: 3.2rem;
-  line-height: 9rem;
+  font-size: 0.32rem;
+  line-height: 0.9rem;
   text-align: center;
 }
 
 .top-title {
-  margin-bottom: 10rem;
+  margin-bottom: 1rem;
 }
 
 .small-code code {
-  font-size: 2.8rem !important;
+  font-size: 0.28rem !important;
 }
 
 .bottom-letter {
-  margin: 12rem 0 -7rem 0 !important;
+  margin: 1。2rem 0 -0.7rem 0 !important;
 }
 
 .portal {
-  width: 6rem;
-  height: 6rem;
-  line-height: 6rem;
-  font-size: 2.2rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  font-size: 0.22rem;
   text-align: center;
   right: 0;
   top: 0;

@@ -1,18 +1,18 @@
 .qa {
-  font-size: 8rem;
+  font-size: 0.8rem;
   text-align: center;
   font-family: 微软雅黑;
 }
 
 .end-word {
-  font-size: 4.5rem;
+  font-size: 0.45rem;
   line-height: 9rem;
   text-align: center;
 }
 
 .end-tag {
-  font-size: 3rem;
+  font-size: 0.3rem;
   text-align: right;
-  margin-top: 10rem;
-  margin-right: 3rem;
+  margin-top: 1rem;
+  margin-right: 0.3rem;
 }

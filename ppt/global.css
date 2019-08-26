@@ -21,7 +21,7 @@
 .step {
   opacity: 0;
   width: 85vw;
-  font-size: 3rem;
+  font-size: 0.3rem;
   transition: all 0.5s;
 }
 
@@ -53,15 +53,15 @@
 }
 
 ::-webkit-scrollbar-thumb:vertical {
-  height: 8px;
+  height: 0.08px;
   background: -webkit-gradient(linear,left top, right bottom, from(#485563), to(#29323c));
-  -webkit-border-radius: 6px;
+  -webkit-border-radius: 0.06px;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-  width: 8px;
+  width: 0.08px;
   background-color: rgba(125, 125, 125, 0.7);
-  -webkit-border-radius: 6px;
+  -webkit-border-radius: 0.06px;
 }
 
 .center {
@@ -71,14 +71,14 @@
 }
 
 .pure-text {
-  font-size: 6rem;
+  font-size: 0.6rem;
   color: #e7edf1;
   font-family: xihei, 微软雅黑;
   font-weight: bold;
 }
 
 .pure-code code {
-  font-size: 3.5rem;
+  font-size: 0.35rem;
   text-align: left;
   font-weight: bold;
 }

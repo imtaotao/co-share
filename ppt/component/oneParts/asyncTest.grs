@@ -23,7 +23,7 @@
     >
       <a
         styleName='portal'
-        style='top: 100px;'
+        style='top: 1rem;'
         href='#/theableTwo'
       >传</a>
       <pre

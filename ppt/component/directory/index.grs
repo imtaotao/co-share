@@ -5,7 +5,7 @@
     styleName='direactory'
     className='step pure-text'
   >
-     <h3 style='margin: 30px 0;'>目录</h3>
+     <h3 style='margin: 0.3rem 0;'>目录</h3>
       <span styleName='sub-title'>发展历程</span>
       <ul>
         <li>什么是 callback</li>

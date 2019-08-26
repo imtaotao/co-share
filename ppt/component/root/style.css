@@ -1,8 +1,8 @@
 .github-icon {
-  top: 2rem;
-  left: 2rem;
-  width: 3.5rem;
-  height: 3.5rem;
+  top: 0.2rem;
+  left: 0.2rem;
+  width: 0.35rem;
+  height: 0.35rem;
   display: flex;
   position: fixed;
   border-radius: 50%;
@@ -16,24 +16,24 @@
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 0.4rem;
   color: #cdcdcd;
-  margin-top: -10rem;
+  margin-top: -1rem;
 }
 
 .author {
-  font-size: 3rem;
-  margin-top: 5rem;
+  font-size: 0.3rem;
+  margin-top: 0.5rem;
   color: #d0d0d0;
-  margin-left: 70rem;
+  margin-left: 7rem;
   font-family: xihei;
 }
 
 .full-screen {
-  width: 6rem;
-  height: 6rem;
-  line-height: 6rem;
-  font-size: 2.2rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  font-size: 0.22rem;
   text-align: center;
   right: 0;
   top: 0;
@@ -45,12 +45,12 @@
 }
 
 .more-text {
-  font-size: 3.2rem;
-  line-height: 9rem;
+  font-size: 0.32rem;
+  line-height: 0.9rem;
   text-align: center;
 }
 
 .history-title {
-  font-size: 4.5rem;
+  font-size: 0.45rem;
   text-align: center;
 }
