@@ -5,6 +5,7 @@
       @click='this.viewNextPage'
     >
     </div>
+
     <a
       styleName='github-icon'
       href='https://github.com/imtaotao/co-share'
@@ -84,6 +85,7 @@
   const Grass = require('@Grass')
   const style = require('./style.css')
   const { launchFullscreen } = require('../../index.js')
+  const pageWidth = document.documentElement.getBoundingClientRect().width
 
   class Root extends Grass.Component {
     // #temp
@@ -105,13 +107,24 @@
       if (document.fullscreenElement) {
         document.exitFullscreen()
       } else {
-        document.documentElement.requestFullscreen()
+        const node = document.documentElement
+        if(node.requestFullscreen){
+          node.requestFullscreen()
+        } else if (node.webkitRequestFullScreen){
+          node.webkitRequestFullScreen()
+        } else if (node.mozRequestFullScreen){
+          node.mozRequestFullScreen()
+        } else {
+          node.msRequestFullscreen()
+        }
       }
     }
 
-    viewNextPage () {
+    viewNextPage (e) {
       const Impress = require('../../index.js')
-      Impress.next()
+      e.pageX > pageWidth / 2
+        ? Impress.next()
+        : Impress.prev()
     }
   }
   module.exports = Grass.CSSModules(style)(Root)

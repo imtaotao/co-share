@@ -74,7 +74,6 @@
       // #temp
       constructor () {
         super()
-        console.log(this);
         this.state = {
           codeOne: [
             ` 

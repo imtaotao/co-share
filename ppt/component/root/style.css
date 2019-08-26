@@ -10,7 +10,6 @@
   z-index: 99;
   width: 100vw;
   height: 100vh;
-  display: none;
 }
 
 .github-icon {
@@ -58,6 +57,7 @@
   position: fixed;
   cursor: pointer;
   border-radius: 50%;
+  z-index: 9999;
 }
 
 .more-text {
