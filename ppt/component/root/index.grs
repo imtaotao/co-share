@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div
+      styleName='mask'
+      @click='this.viewNextPage'
+    >
+    </div>
     <a
       styleName='github-icon'
       href='https://github.com/imtaotao/co-share'
@@ -19,7 +24,7 @@
       >
         <div
           styleName='full-screen'
-          @click='this.launchFullscreen.bind(this)'
+          @click='this.launchFullscreen'
         >
           全屏
         </div>
@@ -102,6 +107,11 @@
       } else {
         document.documentElement.requestFullscreen()
       }
+    }
+
+    viewNextPage () {
+      const Impress = require('../../index.js')
+      Impress.next()
     }
   }
   module.exports = Grass.CSSModules(style)(Root)

@@ -44,8 +44,8 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 0.18rem;
+  height: 0.18rem;
 }
 
 ::-webkit-scrollbar-track-piece {
@@ -53,15 +53,15 @@
 }
 
 ::-webkit-scrollbar-thumb:vertical {
-  height: 0.08px;
+  height: 0.18rem;
   background: -webkit-gradient(linear,left top, right bottom, from(#485563), to(#29323c));
-  -webkit-border-radius: 0.06px;
+  -webkit-border-radius: 0.08rem;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-  width: 0.08px;
+  width: 0.18rem;
   background-color: rgba(125, 125, 125, 0.7);
-  -webkit-border-radius: 0.06px;
+  -webkit-border-radius: 0.08rem;
 }
 
 .center {
