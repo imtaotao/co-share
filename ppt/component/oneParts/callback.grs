@@ -26,21 +26,25 @@
         className='hljs pure-code'
       >
         <code>
-          function ordinary () {
-            const i = value
-            // ...
-            return value
-          }
-          
-          function sideEffect () {
-            const value = 1
-            setTimeout(() => {
-              return value
-            })
-          }
-          
-          console.log(ordinary()) // 1
-          console.log(sideEffect()) // undefined
+          {{
+            this.filterCode(`
+              function ordinary () {
+                const i = value
+                // ...
+                return value
+              }
+              
+              function sideEffect () {
+                const value = 1
+                setTimeout(() => {
+                  return value
+                })
+              }
+              
+              console.log(ordinary()) // 1
+              console.log(sideEffect()) // undefined
+            `)
+          }}
         </code>
       </pre>
     </div>
@@ -56,17 +60,21 @@
         className='hljs pure-code'
       >
         <code>
-          function sideEffect (callback) {
-            const value = 1
-            setTimeout(() => {
-              // ...
-              callback(value)
-            })
-          }
+          {{
+            this.filterCode(`
+              function sideEffect (callback) {
+                const value = 1
+                setTimeout(() => {
+                  // ...
+                  callback(value)
+                })
+              }
 
-          sideEffect(value => {
-            console.log(value) // 1
-          })
+              sideEffect(value => {
+                console.log(value) // 1
+              })
+            `)
+          }}
         </code>
       </pre>
     </div>

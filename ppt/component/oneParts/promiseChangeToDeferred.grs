@@ -14,15 +14,19 @@
         className='hljs pure-code'
       >
         <code>
-          function createDeferred () {
-            let resolve, reject
+          {{
+            this.filterCode(`
+              function createDeferred () {
+                let resolve, reject
 
-            const promise = new Promise((_resolve, _reject) => {
-              resolve = _resolve
-              reject = _reject
-            })
-            return { promise, resolve, reject }
-          }
+                const promise = new Promise((_resolve, _reject) => {
+                  resolve = _resolve
+                  reject = _reject
+                })
+                return { promise, resolve, reject }
+              }
+            `)
+          }}
         </code>
       </pre>
     </div>

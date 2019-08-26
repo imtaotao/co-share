@@ -14,14 +14,18 @@
         className='hljs pure-code'
       >
         <code>
-          // 创建一个高阶函数
-          co.wrap = function (fn) {
-            createPromise.__generatorFunction__ = fn // 单元测试用
-            return createPromise
-            function createPromise() {
-              return co.call(this, fn.apply(this, arguments))
-            }
-          }
+          {{
+            this.filterCode(`
+              // 创建一个高阶函数
+              co.wrap = function (fn) {
+                createPromise.__generatorFunction__ = fn // 单元测试用
+                return createPromise
+                function createPromise() {
+                  return co.call(this, fn.apply(this, arguments))
+                }
+              }
+            `)
+          }}
         </code>
       </pre>
     </div>

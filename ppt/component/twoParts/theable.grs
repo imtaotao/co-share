@@ -15,9 +15,13 @@
         className='hljs pure-code'
       >
         <code>
-          function isPromise (obj) {
-            return 'function' == typeof obj.then
-          }
+          {{
+            this.filterCode(`
+              function isPromise (obj) {
+                return 'function' == typeof obj.then
+              }
+            `)
+          }}
         </code>
       </pre>
     </div>
@@ -69,14 +73,18 @@
         className='hljs pure-code'
       >
         <code>
-          Promise.resolve({
-            then (resolve, reject) {
-              resolve(1)
-            }
-          })
-          .then(res => {
-            console.log(res) // 1
-          })
+          {{
+            this.filterCode(`
+              Promise.resolve({
+                then (resolve, reject) {
+                  resolve(1)
+                }
+              })
+              .then(res => {
+                console.log(res) // 1
+              })
+            `)
+          }}
         </code>
       </pre>
     </div>

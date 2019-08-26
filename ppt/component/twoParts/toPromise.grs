@@ -22,7 +22,7 @@
         v-lighlight
         className='hljs pure-code'
       >
-        <code>{{ codes[0] }}</code>
+        <code>{{ this.filterCode(codes[0]) }}</code>
       </pre>
     </div>
 
@@ -38,7 +38,7 @@
         v-lighlight
         className='hljs pure-code'
       >
-        <code>{{ codes[1] }}</code>
+        <code>{{ this.filterCode(codes[1]) }}</code>
       </pre>
     </div>
 

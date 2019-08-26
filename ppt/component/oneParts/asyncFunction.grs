@@ -29,7 +29,7 @@
         styleName='small-code'
         className='hljs pure-code half'
       >
-        <code>{{ codeOne[0] }}</code>
+        <code>{{ this.filterCode(codeOne[0]) }}</code>
       </pre>
 
        <pre
@@ -52,7 +52,7 @@
         styleName='small-code'
         className='hljs pure-code half'
       >
-        <code>{{ codeTwo[0] }}</code>
+        <code>{{ this.filterCode(codeTwo[0]) }}</code>
       </pre>
 
        <pre
@@ -60,7 +60,7 @@
         styleName='small-code'
         className='hljs pure-code half'
       >
-        <code>{{ codeTwo[1] }}</code>
+        <code>{{ this.filterCode(codeTwo[1]) }}</code>
       </pre>
     </div>
   </div>
@@ -74,6 +74,7 @@
       // #temp
       constructor () {
         super()
+        console.log(this);
         this.state = {
           codeOne: [
             ` 

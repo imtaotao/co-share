@@ -47,7 +47,7 @@
         className='hljs pure-code'
       >
         <code>
-          {{ codeOne }}
+          {{ this.filterCode(codeOne) }}
         </code>
       </pre>
     </div>
@@ -67,7 +67,7 @@
         className='hljs pure-code'
       >
         <code>
-          {{ codeTwo }}
+          {{ this.filterCode(codeTwo) }}
         </code>
       </pre>
     </div>
@@ -83,7 +83,8 @@
       constructor () {
         super()
         this.state = {
-          codeOne: `<template.>
+          codeOne: `
+            <template.>
               <div @click='getMessage'></div>
             </template.>
 
@@ -104,7 +105,8 @@
             </script>
           `,
 
-          codeTwo: `<template.>
+          codeTwo: `
+            <template.>
               <div @click='getMessage'></div>
             </template.>
 

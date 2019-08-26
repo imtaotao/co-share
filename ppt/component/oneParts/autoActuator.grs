@@ -13,20 +13,24 @@
         v-lighlight
         className='hljs pure-code'
       >
-        <code >
-          function co (fn, ...args) {
-            return new Promise((resolve, reject) => {
-              const gen = fn(...args)
+        <code>
+          {{
+            this.filterCode(`
+              function co (fn, ...args) {
+                return new Promise((resolve, reject) => {
+                  const gen = fn(...args)
 
-              function next (result) { ... }
+                  function next (result) { ... }
 
-              function onFulfilled (res) { ... }
+                  function onFulfilled (res) { ... }
 
-              function onRejected (err) { ... }
+                  function onRejected (err) { ... }
 
-              onFulfilled()
-            })
-          }
+                  onFulfilled()
+                })
+              }
+            `)
+          }}
         </code>
       </pre>
     </div>
@@ -42,18 +46,22 @@
         className='hljs pure-code'
       >
         <code>
-          // 自动调用 gen.next()
-          // 然后调用 next() 将结果传入到 generator 对象内部
-          function onFulfilled (res) {
-            let result
+           {{
+            this.filterCode(`
+              // 自动调用 gen.next()
+              // 然后调用 next() 将结果传入到 generator 对象内部
+              function onFulfilled (res) {
+                let result
 
-            try {
-              result = gen.next(res)
-              next(result)
-            } catch (err) {
-              return reject(err)
-            }
-          }
+                try {
+                  result = gen.next(res)
+                  next(result)
+                } catch (err) {
+                  return reject(err)
+                }
+              }
+            `)
+           }}
         </code>
       </pre>
     </div>
@@ -69,18 +77,22 @@
         className='hljs pure-code'
       >
         <code>
-          // 发生错误调用 gen.throw()
-          // 这可以让 generator 函数内部的 try/catch 捕获到
-          function onRejected (res) {
-            let result
+          {{
+            this.filterCode(`
+              // 发生错误调用 gen.throw()
+              // 这可以让 generator 函数内部的 try/catch 捕获到
+              function onRejected (res) {
+                let result
 
-            try {
-              result = gen.throw(err)
-              next(result)
-            } catch (err) {
-              return reject(err)
-            }
-          }
+                try {
+                  result = gen.throw(err)
+                  next(result)
+                } catch (err) {
+                  return reject(err)
+                }
+              }
+            `)
+          }}
         </code>
       </pre>
     </div>
@@ -96,23 +108,27 @@
         className='hljs pure-code'
       >
         <code>
-          // 接受到结果后再次调用 onFulfilled
-          // 继续执行 generator 内部的代码
-          function next (result) {
-            let value = result.value
-            if (result.done) return resolve(value)
+         {{
+          this.filterCode(`
+            // 接受到结果后再次调用 onFulfilled
+            // 继续执行 generator 内部的代码
+            function next (result) {
+              let value = result.value
+              if (result.done) return resolve(value)
 
-            // 如果是 generator 函数，等待整个 generator 函数执行完毕
-            if (
-                value && value.constructor && 
-                value.constructor.name === 'GeneratorFunction'
-            ) {
-              value = co(value)
+              // 如果是 generator 函数，等待整个 generator 函数执行完毕
+              if (
+                  value && value.constructor && 
+                  value.constructor.name === 'GeneratorFunction'
+              ) {
+                value = co(value)
+              }
+
+              // 转为 promise
+              Promise.resolve(value).then(onFulfilled, onRejected)
             }
-
-            // 转为 promise
-            Promise.resolve(value).then(onFulfilled, onRejected)
-          }
+          `)
+         }}
         </code>
       </pre>
     </div>

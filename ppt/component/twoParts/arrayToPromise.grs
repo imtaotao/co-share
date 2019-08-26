@@ -11,10 +11,14 @@
       className='hljs pure-code'
     >
       <code>
-        // 数组种的所有 item 都做了 promise 的过滤
-        function arrayToPromise (obj) {
-          return Promise.all(obj.map(toPromise, this))
-        }
+        {{
+          this.filterCode(`
+            // 数组种的所有 item 都做了 promise 的过滤
+            function arrayToPromise (obj) {
+              return Promise.all(obj.map(toPromise, this))
+            }
+          `)
+        }}
       </code>
     </pre>
   </div>

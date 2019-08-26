@@ -10,22 +10,26 @@
         v-lighlight
         className='hljs pure-code'
       >
-        <code >
-          const getData = () => {
-            return new Promise(resolve => resolve(1))
-          }
+        <code>
+          {{
+            this.filterCode(`
+              const getData = () => {
+                return new Promise(resolve => resolve(1))
+              }
 
-          const getMoreData = value => {
-            return value + 1
-          }
+              const getMoreData = value => {
+                return value + 1
+              }
 
-          getData()
-            .then(getMoreData)
-            .then(getMoreData)
-            .then(getMoreData)
-            .then(value => {
-              console.log(value) // 4
-            })
+              getData()
+                .then(getMoreData)
+                .then(getMoreData)
+                .then(getMoreData)
+                .then(value => {
+                  console.log(value) // 4
+                })
+            `)
+          }}
         </code>
       </pre>
     </div>
@@ -40,20 +44,24 @@
         v-lighlight
         className='hljs pure-code'
       >
-        <code >
-          const gen = (function * () {
-            const a = yield 1
-            const b = yield a + 1
-            const c = yield b + 1
-            const d = yield c + 1
-            return d
-          })()
+        <code>
+          {{
+            this.filterCode(`
+              const gen = (function * () {
+              const a = yield 1
+              const b = yield a + 1
+              const c = yield b + 1
+              const d = yield c + 1
+              return d
+            })()
 
-          const a = gen.next()
-          const b = gen.next(a.value)
-          const c = gen.next(b.value)
-          const d = gen.next(c.value)
-          console.log(d.value) // 4
+            const a = gen.next()
+            const b = gen.next(a.value)
+            const c = gen.next(b.value)
+            const d = gen.next(c.value)
+            console.log(d.value) // 4
+            `)
+          }}
         </code>
       </pre>
     </div>

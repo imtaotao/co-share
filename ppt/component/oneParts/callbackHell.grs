@@ -23,15 +23,19 @@
         className='hljs pure-code'
       >
         <code>
-         getData(function (a) {
-            getMoreData(a, function (b) {
-              getMoreData(b, function (c) {
-                getMoreData(c, function (d) {
-                  // ...
+        {{
+          this.filterCode(`
+            getData(function (a) {
+              getMoreData(a, function (b) {
+                getMoreData(b, function (c) {
+                  getMoreData(c, function (d) {
+                    // ...
+                  })
                 })
               })
             })
-          })
+          `)
+        }}
         </code>
       </pre>
     </div>

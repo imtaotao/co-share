@@ -14,14 +14,18 @@
         className='hljs pure-code'
       >
         <code>
-          const ret = co(function * () {
-            const a = yield 1
-            const b = yield a + 1
-            const c = yield b + 1
-            const d = yield c + 1
-            return d
-          })
-          ret.then(v => console.log(v)) // 4
+          {{
+            this.filterCode(`
+              const ret = co(function * () {
+                const a = yield 1
+                const b = yield a + 1
+                const c = yield b + 1
+                const d = yield c + 1
+                return d
+              })
+              ret.then(v => console.log(v)) // 4
+            `)
+          }}
         </code>
       </pre>
     </div>
@@ -41,23 +45,27 @@
         className='hljs pure-code'
       >
         <code>
-          const fn = v => new Promise(resolve => setTimeout(() => resolve(v + 1)))
-          const ret = co(function * () {
-            const a = yield fn(1)
-            console.log(a) // 2
+          {{
+            this.filterCode(`
+              const fn = v => new Promise(resolve => setTimeout(() => resolve(v + 1)))
+              const ret = co(function * () {
+                const a = yield fn(1)
+                console.log(a) // 2
 
-            const b = yield fn(a)
-            console.log(b) // 3
+                const b = yield fn(a)
+                console.log(b) // 3
 
-            const c = yield fn(b)
-            console.log(c) // 4
+                const c = yield fn(b)
+                console.log(c) // 4
 
-            const d = yield fn(c)
-            console.log(d) // 5
+                const d = yield fn(c)
+                console.log(d) // 5
 
-            return d
-          })
-          ret.then(v => console.log(v)) // 5
+                return d
+              })
+              ret.then(v => console.log(v)) // 5
+            `)
+          }}
         </code>
       </pre>
     </div>
@@ -76,17 +84,21 @@
         className='hljs pure-code'
       >
         <code>
-          // 错误都能被捕捉
-          const ret = co(function * () {
-            try {
-              throw 'errorOne'
-            } catch (err) {
-              console.log(err) // errorOne
-              throw 'errorTwo'
-            }
-          })
+          {{
+            this.filterCode(`
+              // 错误都能被捕捉
+              const ret = co(function * () {
+                try {
+                  throw 'errorOne'
+                } catch (err) {
+                  console.log(err) // errorOne
+                  throw 'errorTwo'
+                }
+              })
 
-          ret.catch(err => console.log(err)) // errorTwo
+              ret.catch(err => console.log(err)) // errorTwo
+            `)
+          }}
         </code>
       </pre>
     </div>

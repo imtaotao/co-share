@@ -25,19 +25,23 @@
         className='hljs pure-code'
       >
         <code>
-          // deferred
-          deferred.promise.then(v => console.log(v))
-          setTimeout(() => {
-            deferred.resolve('tao')
-          }, 500)
-          
-          // promise
-          const p = new Promise(resolve => {
-            setTimeout(() => {
-              resolve('tao')
-            }, 500)
-          })
-          p.then(v => console.log(v))
+          {{
+            this.filterCode(`
+              // deferred
+              deferred.promise.then(v => console.log(v))
+              setTimeout(() => {
+                deferred.resolve('tao')
+              }, 500)
+              
+              // promise
+              const p = new Promise(resolve => {
+                setTimeout(() => {
+                  resolve('tao')
+                }, 500)
+              })
+              p.then(v => console.log(v))
+            `)
+          }}
         </code>
       </pre>
     </div>
@@ -57,12 +61,16 @@
         className='hljs pure-code'
       >
         <code>
-          // 不会捕捉到错误
-          deferred.promise.catch(reason => console.log(reason))
+          {{
+            this.filterCode(`
+              // 不会捕捉到错误
+              deferred.promise.catch(reason => console.log(reason))
 
-          setTimeout(() => {
-            throw 'error'
-          })
+              setTimeout(() => {
+                throw 'error'
+              })
+            `)
+          }}
         </code>
       </pre>
     </div>
@@ -78,16 +86,20 @@
         className='hljs pure-code'
       >
         <code>
-          // 必须用 try catch 然后通过 deferrd.reject 触发
-          deferred.promise.catch(reason => console.log(reason))
+          {{
+            this.filterCode(`
+              // 必须用 try catch 然后通过 deferrd.reject 触发
+              deferred.promise.catch(reason => console.log(reason))
 
-          setTimeout(() => {
-            try {
-              throw 'error'
-            } catch (err) {
-              deferred.reject(err)
-            }
-          })
+              setTimeout(() => {
+                try {
+                  throw 'error'
+                } catch (err) {
+                  deferred.reject(err)
+                }
+              })
+            `)
+          }}
         </code>
       </pre>
     </div>
@@ -104,12 +116,16 @@
         className='hljs pure-code'
       >
         <code>
-          // promise 由于是自执行，自动捕捉异常
-          const p = new Promise(() => {
-            throw 'error'
-          })
+          {{
+            this.filterCode(`
+              // promise 由于是自执行，自动捕捉异常
+              const p = new Promise(() => {
+                throw 'error'
+              })
 
-          p.catch(reason => console.log(reason))
+              p.catch(reason => console.log(reason))
+            `)
+          }}
         </code>
       </pre>
     </div>

@@ -32,26 +32,30 @@
         className='hljs pure-code'
       >
         <code>
-          // 将会打印 'into'
-          // 这表明 async 函数会在 promise 后面添加 p.then() 的行为
-          // 这无关 promise 是哪一种实现（theable 也是可以的）
+          {{
+            this.filterCode(`
+              // 将会打印 'into'
+              // 这表明 async 函数会在 promise 后面添加 p.then() 的行为
+              // 这无关 promise 是哪一种实现（theable 也是可以的）
 
-          const p = {
-            then (resolve, reject) {
-              console.log('into')
-              setTimeout(() => resolve('tao'), 1000)
-              // reject('err')
-            }
-          }
+              const p = {
+                then (resolve, reject) {
+                  console.log('into')
+                  setTimeout(() => resolve('tao'), 1000)
+                  // reject('err')
+                }
+              }
 
-          (async function () {
-            try {
-              const v = await p
-              console.log(v)
-            } catch (err) {
-              console.log(err)
-            }
-          })()
+              (async function () {
+                try {
+                  const v = await p
+                  console.log(v)
+                } catch (err) {
+                  console.log(err)
+                }
+              })()
+            `)
+          }}
         </code>
       </pre>
     </div>
@@ -64,6 +68,8 @@
   module.exports = Grass.CSSModules(style)(
     class AsyncTest extends Grass.Component {
       // #temp
+
+
     }
   )
 </script>

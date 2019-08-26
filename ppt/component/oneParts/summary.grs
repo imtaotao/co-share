@@ -13,21 +13,29 @@
         v-lighlight
         className='hljs pure-code half'
       >
-<code >
-xhr.get('xx', data, res => {
-  console.log(res)
-})
-</code>
+        <code>
+          {{
+            this.filterCode(`
+              xhr.get('xx', data, res => {
+                console.log(res)
+              })
+            `)
+          }}
+        </code>
       </pre>
 
       <pre
         v-lighlight
         className='hljs pure-code half'
       >
-<code >
-const res = await xhr.get('xx', data)
-console.log(res)
-</code>
+        <code>
+          {{
+            this.filterCode(`
+              const res = await xhr.get('xx', data)
+              console.log(res)
+            `)
+          }}
+        </code>
       </pre>
     </div>
 
