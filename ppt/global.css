@@ -1,8 +1,3 @@
-@font-face {
-  font-family: xihei;
-  src: url('./ppt/assets/方正兰亭超细黑简体.ttf');
-}
-
 /* 该类添加在还未展示的步骤结点，当该元素被导航时会自动删除future类，显示页面 */
 .future {
   pointer-events: none;
@@ -91,4 +86,22 @@
 
 .link {
   color: #94d6e9;
+}
+
+@media (max-width: 500px) {
+  .step {
+    width: 220vw;
+  }
+  .pure-text {
+    font-size: 1.8rem;
+  }
+
+  .pure-code code {
+    font-size: 0.6rem;
+  }
+
+  .half {
+    width: 100%;
+    padding-left: 0.8rem !important;
+  }
 }

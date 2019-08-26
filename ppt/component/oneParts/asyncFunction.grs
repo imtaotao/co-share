@@ -37,7 +37,7 @@
         styleName='small-code'
         className='hljs pure-code half'
       >
-      <code>{{ codeOne[1] }}</code>
+      <code>{{ this.filterCode(codeOne[1]) }}</code>
       </pre>
     </div>
 

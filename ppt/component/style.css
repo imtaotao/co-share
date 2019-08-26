@@ -80,7 +80,7 @@
 }
 
 .bottom-letter {
-  margin: 1。2rem 0 -0.7rem 0 !important;
+  margin: 1.2rem 0 -0.7rem 0 !important;
 }
 
 .portal {
@@ -96,4 +96,86 @@
   position: fixed;
   cursor: pointer;
   border-radius: 50%;
+}
+
+@media (max-width: 500px) {
+  .small {
+    margin-top: 0.4rem;
+    font-size: 0.25rem;
+  }
+  
+  .title {
+    font-size: 0.8rem;
+  }
+  
+  .title div {
+    margin: 0.2rem 0;
+  }
+  
+  .title p {
+    font-size: 0.6rem;
+  }
+  
+  .history-title {
+    font-size: 1rem;
+  }
+  
+  .history-item {
+    margin: 0.6rem 0;
+  }
+  
+  .history-item :global(.pure-text) {
+    font-size: 0.8rem !important;
+  }
+  
+  .history-item div {
+    margin-bottom: 0.5rem;
+    border-radius: 0.1rem;
+    padding: 0.15rem;
+    border: none;
+  }
+  
+  .conclusion {
+    font-size: 0.6rem;
+    line-height: 1.5rem;
+  }
+  
+  .conclusion li {
+    margin: 1rem 0;
+  }
+  
+  .sub-conclusion {
+    font-size: 0.45rem;
+    line-height: 0.7rem;
+    margin-left: 0.8rem !important;
+  }
+  
+  .more-text {
+    font-size: 0.6rem;
+    line-height: 1.3rem;
+  }
+  
+  .top-title {
+    margin-bottom: 1rem;
+  }
+  
+  .small-code code {
+    font-size: 0.5rem !important;
+  }
+  
+  .bottom-letter {
+    margin: 1.2rem 0 -0.7rem 0 !important;
+  }
+  
+  .portal {
+    width: 0.6rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.22rem;
+  }
+
+  :global(.step) pre {
+    padding: 0;
+    margin: 0;
+  }
 }

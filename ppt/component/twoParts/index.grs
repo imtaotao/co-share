@@ -24,7 +24,7 @@
         >
           TJ
         </a>
-        大神为 koa 框架编写的一个基于 generator + promise 处理异步行为的库。这种结合带来了强大的异步交互能力，可以显着改进在 JavaScript 中编写异步代码的语言级模型。这对于基于事件驱动的 nodeJs 来说，兴奋的要流泪。并且为
+        大神为 koa 框架编写的一个基于 generator + promise 处理异步行为的库。这种结合带来了强大的异步交互能力，可以显着改进在 JavaScript 中编写异步代码的语言级模型。这对于基于事件驱动的 nodeJs 来说，是非常利好的事情。并且为
         <a
           className='link'
           href='https://github.com/tc39/ecmascript-asyncawait'

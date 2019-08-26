@@ -47,7 +47,10 @@
         <code>
           {{
             this.filterCode(`
-              const fn = v => new Promise(resolve => setTimeout(() => resolve(v + 1)))
+              const fn = v => new Promise(resolve => {
+                setTimeout(() => resolve(v + 1))
+              })
+
               const ret = co(function * () {
                 const a = yield fn(1)
                 console.log(a) // 2

@@ -57,11 +57,15 @@
             className='hljs pure-code'
           >
           <code>
-            array
-            object
-            promise
-            generator
-            function（thunk function 我们不做讨论）
+            {{
+              this.filterCode(`
+                array
+                object
+                promise
+                generator
+                function（thunk function 我们不做讨论）
+              `)
+            }}
           </code>
           </pre>
       </div>

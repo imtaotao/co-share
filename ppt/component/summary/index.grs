@@ -18,7 +18,7 @@
       className='step pure-text'
     >
       <div styleName='end-word'>谢谢观看，希望能给你带来收获</div>
-      <div styleName='end-tag'>ended</div>
+      <div styleName='end-tag'>end</div>
     </div>
   </div>
 </template>

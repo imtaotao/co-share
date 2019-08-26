@@ -10,3 +10,18 @@
 .direactory ul li {
   margin-bottom: 0.2rem;
 }
+
+@media (max-width: 500px) {
+  .sub-title {
+    font-size: 0.9rem;
+  }
+  
+  .direactory ul {
+    padding: 0 0.8rem;
+    font-size: 0.6rem;
+  }
+  
+  .direactory ul li {
+    margin-bottom: 0.5rem;
+  }
+}

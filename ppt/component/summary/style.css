@@ -16,3 +16,14 @@
   margin-top: 1rem;
   margin-right: 0.3rem;
 }
+
+@media (max-width: 500px) {
+  .end-word {
+    font-size: 0.8rem;
+    line-height: 9rem;
+  }
+  
+  .end-tag {
+    font-size: 0.6rem;
+  }
+}

@@ -43,8 +43,12 @@
         className='hljs pure-code'
       >
         <code>
-          const fn = co.wrap(function * () {})
-          const gen = fn()
+          {{
+            this.filterCode(`
+              const fn = co.wrap(function * () {})
+              const gen = fn()
+            `)
+          }}
         </code>
       </pre>
     </div>
