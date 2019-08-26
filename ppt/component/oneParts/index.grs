@@ -21,21 +21,24 @@
   const Grass = require('@Grass')
   module.exports = class OneParts extends Grass.Component {
     // #temp
-    component = {
-      Summary: require('./summary'),
-      History: require('./history'),
-      Callback: require('./callback'),
-      Generator: require('./generator'),
-      PromiseShow: require('./promise'),
-      AsyncTest: require('./asyncTest'),
-      AutoActuator: require('./autoActuator'),
-      CallbackHell: require('./callbackHell'),
-      AsyncFunction: require('./asyncFunction'),
-      CallbackChange: require('./callbackChange'),
-      AutoActuatorTest: require('./autoActuatorTest'),
-      WhyChoosePromise: require('./whyChoosePromise'),
-      CallbackToPromise: require('./callbackToPromise'),
-      PromiseChangeToDeferred: require('./promiseChangeToDeferred'),
+    constructor () {
+      super()
+      this.component = {
+        Summary: require('./summary'),
+        History: require('./history'),
+        Callback: require('./callback'),
+        Generator: require('./generator'),
+        PromiseShow: require('./promise'),
+        AsyncTest: require('./asyncTest'),
+        AutoActuator: require('./autoActuator'),
+        CallbackHell: require('./callbackHell'),
+        AsyncFunction: require('./asyncFunction'),
+        CallbackChange: require('./callbackChange'),
+        AutoActuatorTest: require('./autoActuatorTest'),
+        WhyChoosePromise: require('./whyChoosePromise'),
+        CallbackToPromise: require('./callbackToPromise'),
+        PromiseChangeToDeferred: require('./promiseChangeToDeferred'),
+      }
     }
   }
 </script>

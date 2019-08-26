@@ -82,17 +82,20 @@
 
   class Root extends Grass.Component {
     // #temp
-    state = {
-      text: '全屏',
-    }
+    constructor () {
+      super()
+      this.state = {
+        text: '全屏',
+      }
 
-    component = {
-      Summary: require('@comp/summary/index'),
-      OneParts: require('@comp/oneParts/index'),
-      TwoParts: require('@comp/twoParts/index'),
-      Directory: require('@comp/directory/index'),
+      this.component = {
+        Summary: require('@comp/summary/index'),
+        OneParts: require('@comp/oneParts/index'),
+        TwoParts: require('@comp/twoParts/index'),
+        Directory: require('@comp/directory/index'),
+      }
     }
-
+   
     launchFullscreen () {
       if (document.fullscreenElement) {
         document.exitFullscreen()

@@ -72,52 +72,54 @@
   module.exports = Grass.CSSModules(style)(
     class AsyncFunction extends Grass.Component {
       // #temp
+      constructor () {
+        super()
+        this.state = {
+          codeOne: [
+            ` 
+            const ret = (async function () {
+              const a = await fn(1)
+              const b = await fn(a)
+              const c = await fn(b)
+              const d = await fn(c)
+              return d
+            })()
+            ret.then(v => console.log(v))`,
 
-      state = {
-        codeOne: [
-          ` 
-          const ret = (async function () {
-            const a = await fn(1)
-            const b = await fn(a)
-            const c = await fn(b)
-            const d = await fn(c)
-            return d
-          })()
-          ret.then(v => console.log(v))`,
+            `
+            const ret = co(function * () {
+              const a = yield fn(1)
+              const b = yield fn(a)
+              const c = yield fn(b)
+              const d = yield fn(c)
+              return d
+            })
+            ret.then(v => console.log(v))`,
+          ],
+          codeTwo: [
+            `
+            const ret = (async function () {
+              try {
+                throw 'errorOne'
+              } catch (err) {
+                console.log(err)
+                throw 'errorTwo'
+              }
+            })()
+            ret.catch(err => console.log(err))`,
 
-          `
-          const ret = co(function * () {
-            const a = yield fn(1)
-            const b = yield fn(a)
-            const c = yield fn(b)
-            const d = yield fn(c)
-            return d
-          })
-          ret.then(v => console.log(v))`,
-        ],
-        codeTwo: [
-          `
-          const ret = (async function () {
-            try {
-              throw 'errorOne'
-            } catch (err) {
-              console.log(err)
-              throw 'errorTwo'
-            }
-          })()
-          ret.catch(err => console.log(err))`,
-
-          `
-          const ret = co(function * () {
-            try {
-              throw 'errorOne'
-            } catch (err) {
-              console.log(err)
-              throw 'errorTwo'
-            }
-          })
-          ret.catch(err => console.log(err))`,
-        ]
+            `
+            const ret = co(function * () {
+              try {
+                throw 'errorOne'
+              } catch (err) {
+                console.log(err)
+                throw 'errorTwo'
+              }
+            })
+            ret.catch(err => console.log(err))`,
+          ]
+        }
       }
     }
   )

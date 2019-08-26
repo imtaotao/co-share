@@ -55,13 +55,16 @@
   module.exports = Grass.CSSModules(style)(
     class CoAnlysiss extends Grass.Component {
       // #temp
-      component = {
-        CoWrap: require('./coWrap'),
-        Theable: require('./theable'),
-        Summary: require('./summary'),
-        ToPromise: require('./toPromise'),
-        ArrayToPromise: require('./arrayToPromise'),
-        ObjectToPromise: require('./objectToPromise'),
+      constructor () {
+        super()
+        this.component = {
+          CoWrap: require('./coWrap'),
+          Theable: require('./theable'),
+          Summary: require('./summary'),
+          ToPromise: require('./toPromise'),
+          ArrayToPromise: require('./arrayToPromise'),
+          ObjectToPromise: require('./objectToPromise'),
+        }
       }
     }
   )

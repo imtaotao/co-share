@@ -22,18 +22,7 @@
         v-lighlight
         className='hljs pure-code'
       >
-<code>
-function next(ret) {
-  if (ret.done) return resolve(ret.value)
-  var value = toPromise.call(ctx, ret.value)
-  if (value && isPromise(value)) return value.then(onFulfilled, onRejected)
-
-  return onRejected(new TypeError(
-    'You may only yield a function, promise, generator, array, or object, '
-    + 'but the following object was passed: "' + String(ret.value) + '"')
-  )
-}
-</code>
+        <code>{{ codes[0] }}</code>
       </pre>
     </div>
 
@@ -45,25 +34,12 @@ function next(ret) {
       styleName='title'
       className='step pure-text'
     >
-      <div>
-<pre
-  v-lighlight
-  className='hljs pure-code'
->
-<code>
-  function toPromise(obj) {
-    if (!obj) return obj
-    if (isPromise(obj)) return obj
-    if (isGeneratorFunction(obj) || isGenerator(obj)) return co.call(this, obj)
-    if ('function' == typeof obj) return thunkToPromise.call(this, obj)
-    if (Array.isArray(obj)) return arrayToPromise.call(this, obj)
-    if (isObject(obj)) return objectToPromise.call(this, obj)
-
-    return obj
-  }
-</code>
-</pre>
-      </div>
+      <pre
+        v-lighlight
+        className='hljs pure-code'
+      >
+        <code>{{ codes[1] }}</code>
+      </pre>
     </div>
 
     <div
@@ -99,6 +75,37 @@ function next(ret) {
   module.exports = Grass.CSSModules(style)(
     class ToPromise extends Grass.Component {
       // #temp
+      constructor () {
+        super()
+        this.state = {
+          codes: [
+            `
+            function next(ret) {
+              if (ret.done) return resolve(ret.value)
+              var value = toPromise.call(ctx, ret.value)
+              if (value && isPromise(value)) return value.then(onFulfilled, onRejected)
+
+              return onRejected(new TypeError(
+                'You may only yield a function, promise, generator, array, or object, '
+                + 'but the following object was passed: "' + String(ret.value) + '"')
+              )
+            }`,
+
+            `
+            function toPromise(obj) {
+              if (!obj) return obj
+              if (isPromise(obj)) return obj
+              if (isGeneratorFunction(obj) || isGenerator(obj)) return co.call(this, obj)
+              if ('function' == typeof obj) return thunkToPromise.call(this, obj)
+              if (Array.isArray(obj)) return arrayToPromise.call(this, obj)
+              if (isObject(obj)) return objectToPromise.call(this, obj)
+
+              return obj
+            }
+            `,
+          ]
+        }
+      }
     }
   )
 </script>

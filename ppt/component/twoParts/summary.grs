@@ -80,52 +80,55 @@
   module.exports = Grass.CSSModules(style)(
     class Summary extends Grass.Component {
       // #temp
-      state = {
-        codeOne: `<template.>
-            <div @click='getMessage'></div>
-          </template.>
+      constructor () {
+        super()
+        this.state = {
+          codeOne: `<template.>
+              <div @click='getMessage'></div>
+            </template.>
 
-          <script>
-            export default {
-              data: () => ({
-                message: '',
-              }),
+            <script>
+              export default {
+                data: () => ({
+                  message: '',
+                }),
 
-              methods: {
-                // 问题在于异步请求是副作用，我们无法预测这个结果在什么时间到来
-                // 导致我们无法保证程序的顺序。同样也很难复现，同样的输入可能导致不同的输出
-                async getMessage () {
-                  this.message = await xhr.get('xx')
+                methods: {
+                  // 问题在于异步请求是副作用，我们无法预测这个结果在什么时间到来
+                  // 导致我们无法保证程序的顺序。同样也很难复现，同样的输入可能导致不同的输出
+                  async getMessage () {
+                    this.message = await xhr.get('xx')
+                  }
                 }
               }
-            }
-          </script>
-        `,
+            </script>
+          `,
 
-        codeTwo: `<template.>
-            <div @click='getMessage'></div>
-          </template.>
+          codeTwo: `<template.>
+              <div @click='getMessage'></div>
+            </template.>
 
-          <script>
-            export default {
-              data: () => ({
-                message: '',
-                requestId: 0,
-              }),
+            <script>
+              export default {
+                data: () => ({
+                  message: '',
+                  requestId: 0,
+                }),
 
-              methods: {
-                // 利用闭包拒绝掉已经丢弃的副作用行为
-                async getMessage () {
-                  const id = ++this.requestId
-                  const res = await xhr.get('xx')
+                methods: {
+                  // 利用闭包拒绝掉已经丢弃的副作用行为
+                  async getMessage () {
+                    const id = ++this.requestId
+                    const res = await xhr.get('xx')
 
-                  if (id !== this.requestId) return
-                  this.message = res
+                    if (id !== this.requestId) return
+                    this.message = res
+                  }
                 }
               }
-            }
-          </script>
-        `,
+            </script>
+          `,
+        }
       }
     }
   )
