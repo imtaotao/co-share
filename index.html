@@ -1,71 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<title>ppt</title>
-	<link rel="stylesheet" href="ppt/lib/highlight/highlight.css">
-	<style>
-		body {
-			margin: 0;
-			background: rgb(49, 54, 64);
-		}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ppt by imtaotao</title>
+  <link rel="stylesheet" href="ppt/lib/highlight/highlight.css">
+  <style>
+    body {
+      margin: 0;
+      background: rgb(49, 54, 64);
+    }
 
-		#notSupport {
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			font-size: 20px;
-			color: #727272;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			position: fixed;
-			flex-direction: column;
-		}
-	</style>
+    #loading {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      position: fixed;
+      font-size: 20px;
+      color: #727272;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+  </style>
 </head>
 <body>
-	<div id="notSupport">
-		<div>您的浏览器版本不支持阅览此 ppt </div>
-		<div>请在 pc 端打开</div>
-	</div>
-	<div id="root"></div>
-	<script src="ppt/lib/impress.js"></script>
-	<script src="ppt/lib/highlight/highlight.pack.js"></script>
-	<!-- <script src="https://cdn.jsdelivr.net/gh/imtaotao/css-module/index.js"></script> -->
-	<script src="ppt/lib/css-module.js"></script>
-	<script src="ppt/lib/liberty.js"></script>
-	<script src="ppt/lib/liberty-plugin.js"></script>
-	<script>
-		const basePATH = location.hostname.includes('github')
-			? '/co-share'
-			: ''
+  <div id="loading">
+    <div>加载中...</div>
+  </div>
+  <div id="root"></div>
+  <script src="ppt/lib/impress.js"></script>
+  <script src="ppt/lib/highlight/highlight.pack.js"></script>
+  <script src="ppt/lib/css-module.js"></script>
+  <script src="ppt/lib/liberty.js"></script>
+  <script src="ppt/lib/liberty-plugin.js"></script>
+  <script>
+    const basePATH = location.hostname.includes('github') ? '/co-share' : ''
 
-		Liberty.addPlugin('.css', res => {
-			const { path, resource } = res
-			// 过滤掉全局的 css
-			if (path.includes('global') || path.includes('lib')) {
-				const styleNode = document.createElement('style')
-				styleNode.textContent = res.resource
-				document.head.appendChild(styleNode)
-				return null
-			}
-				
-			return CssModule(res)
-		})
+    window.onerror = function(error) {
+      console.error('Occur error.')
+      const dom = document.getElementById('loading')
+      if (dom) {
+        dom.innerHTML = `
+          <div>您的浏览器版本不支持阅览此 ppt </div>
+          <div>请在 pc 端打开</div>
+        `
+      }
+    }
+    
+    // 启动模块加载器
+    Liberty.addPlugin('.css', res => {
+      const { path, resource } = res
 
-		Liberty.addPlugin('.grs', GrassPlugin)
-		Liberty.addPlugin('.grs', Liberty.plugins.jsPlugin)
-		Liberty.init({
-			exname: '.grs',
-			alias: {
-				comp: basePATH + '/ppt/component',
-				Grass: 'https://cdn.jsdelivr.net/gh/imtaotao/Grass/dist/grass.common.js',
-			},
-		})
-		(basePATH + '/ppt/index.js')
-	</script>
+      if (path.includes('global') || path.includes('lib')) {
+        const styleNode = document.createElement('style')
+        styleNode.textContent = res.resource
+        document.head.appendChild(styleNode)
+        return null
+      }
+      return CssModule(res)
+    })
+
+    Liberty.addPlugin('.grs', GrassPlugin)
+    Liberty.addPlugin('.grs', Liberty.plugins.jsPlugin)
+    Liberty.init({
+      exname: '.grs',
+      alias: {
+        comp: basePATH + '/ppt/component',
+        Grass: 'https://cdn.jsdelivr.net/gh/imtaotao/Grass/dist/grass.common.js',
+      },
+    })(basePATH + '/ppt/index.js')
+
+  </script>
 </body>
 </html>
