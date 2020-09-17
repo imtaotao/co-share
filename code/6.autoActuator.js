@@ -44,6 +44,7 @@ function co (fn, ...args) {
   })
 }
 
+// ---- test ----
 const ret = co(function * () {
   const a = yield 1
   const b = yield a + 1
@@ -56,14 +57,16 @@ ret.then(v => console.log(v))
 // demo
 function demo () {
   const fn = v => {
-    return new Promise(resolve => setTimeout(() => resolve(v + 1), 200))
+    return new Promise(resolve => {
+      setTimeout(() => resolve(v), 200)
+    })
   }
 
   const ret = co(function * () {
     const a = yield fn(1)
-    const b = yield fn(a)
-    const c = yield fn(b)
-    const d = yield fn(c)
+    const b = yield fn(a + 1)
+    const c = yield fn(b + 1)
+    const d = yield fn(c + 1)
     return d
   })
   ret.then(v => console.log(v))

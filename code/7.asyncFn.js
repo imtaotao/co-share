@@ -10,14 +10,16 @@ ret.then(v => console.log(v))
 // demo
 function demo () {
   const fn = v => {
-    return new Promise(resolve => setTimeout(() => resolve(v + 1), 200))
+    return new Promise(resolve => {
+      setTimeout(() => resolve(v), 200)
+    })
   }
 
   const ret = (async function () {
     const a = await fn(1)
-    const b = await fn(a)
-    const c = await fn(b)
-    const d = await fn(c)
+    const b = await fn(a + 1)
+    const c = await fn(b + 1)
+    const d = await fn(c + 1)
     return d
   })()
   ret.then(v => console.log(v))

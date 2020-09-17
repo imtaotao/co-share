@@ -53,7 +53,6 @@
     // 启动模块加载器
     Liberty.addPlugin('.css', res => {
       const { path, resource } = res
-
       if (path.includes('global') || path.includes('lib')) {
         const styleNode = document.createElement('style')
         styleNode.textContent = res.resource
@@ -72,7 +71,6 @@
         Grass: 'https://cdn.jsdelivr.net/gh/imtaotao/Grass/dist/grass.common.js',
       },
     })(basePATH + '/ppt/index.js')
-
   </script>
 </body>
 </html>
