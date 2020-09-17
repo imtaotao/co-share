@@ -29,17 +29,17 @@
         >
           全屏
         </div>
-        <h1 className='center'>co.js 源码解读<sup>*</sup> </h1>
+        <h1 className='center'>js 异步历史与 co.js 解读<sup>*</sup> </h1>
         <h3
           className='center'
           styleName='author'
         >
-          <span> —— by 
-            <a
-              className='link'
-              href='https://github.com/imtaotao'
-            >Imtaoao</a>
-          </span>
+          <a
+            className='link'
+            href='https://github.com/imtaotao'
+          >
+            chentao
+          </a>
         </h3>
       </div>
       
@@ -51,10 +51,10 @@
         className='step pure-text'
       >
         <div styleName='more-text'>
-          co 这个库是用来做什么的 ？
+          为什么要解读 co.js
         </div>
         <div styleName='more-text'>
-          我们解读他能够获得什么 ？
+          这个库是用来做什么的 ？<br/>我们解读他能够获得什么 ？
         </div>
       </div>
 

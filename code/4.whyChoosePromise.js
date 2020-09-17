@@ -29,23 +29,22 @@ function demoTwo () {
   const deferred = create()
   deferred.promise.catch(reason => console.log(reason))// 不触发
   setTimeout(() => {
-    throw 'err'
-
+    // throw 'err'
     // 必须用 try catch 然后通过 deferrd.reject 触发
-    // try {
-    //   throw 'err'
-    // } catch (err) {
-    //   deferred.reject(err)
-    // }
+    try {
+      throw 'errDeferred'
+    } catch (err) {
+      deferred.reject(err)
+    }
   })
 
   // promise 由于是自执行，自动捕捉异常
-  new Promise(() => { throw 'err' })
+  new Promise(() => { throw 'errPromise' })
   .catch(reason => console.log(reason))
 }
 
-demoOne()
-// demoTwo()
+// demoOne()
+demoTwo()
 
 // 通过 promise 创建一个 deferred，可以替换上面的 q 创建的
 function createDeferred () {

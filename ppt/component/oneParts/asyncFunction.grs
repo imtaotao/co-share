@@ -79,9 +79,9 @@
             ` 
             const ret = (async function () {
               const a = await fn(1)
-              const b = await fn(a)
-              const c = await fn(b)
-              const d = await fn(c)
+              const b = await fn(a + 1)
+              const c = await fn(b + 1)
+              const d = await fn(c + 1)
               return d
             })()
             ret.then(v => console.log(v))`,
@@ -89,9 +89,9 @@
             `
             const ret = co(function * () {
               const a = yield fn(1)
-              const b = yield fn(a)
-              const c = yield fn(b)
-              const d = yield fn(c)
+              const b = yield fn(a + 1)
+              const c = yield fn(b + 1)
+              const d = yield fn(c + 1)
               return d
             })
             ret.then(v => console.log(v))`,

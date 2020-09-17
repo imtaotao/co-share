@@ -30,7 +30,7 @@
       styleName='title'
       className='step pure-text'
     >
-      如果理解了，请少写点这样的 bug
+      如果加深了对异步副作用的认识，请注意这样的 bug
     </div>
 
     <div
@@ -98,7 +98,7 @@
                   // 问题在于异步请求是副作用，我们无法预测这个结果在什么时间到来
                   // 导致我们无法保证程序的顺序。同样也很难复现，同样的输入可能导致不同的输出
                   async getMessage () {
-                    this.message = await xhr.get('xx')
+                    this.message = await fetch('xx')
                   }
                 }
               }
@@ -121,7 +121,7 @@
                   // 利用闭包拒绝掉已经丢弃的副作用行为
                   async getMessage () {
                     const id = ++this.requestId
-                    const res = await xhr.get('xx')
+                    const res = await fetch('xx')
 
                     if (id !== this.requestId) return
                     this.message = res
