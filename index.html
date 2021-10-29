@@ -32,10 +32,10 @@
   </div>
   <div id="root"></div>
   <script src="ppt/lib/impress.js"></script>
-  <script src="ppt/lib/highlight/highlight.pack.js"></script>
-  <script src="ppt/lib/css-module.js"></script>
-  <script src="ppt/lib/liberty.js"></script>
-  <script src="ppt/lib/liberty-plugin.js"></script>
+  <script src="ppt/lib/highlight/highlight.pack.js" no-entry></script>
+  <script src="ppt/lib/css-module.js" no-entry></script>
+  <script src="ppt/lib/liberty.js" no-entry></script>
+  <script src="ppt/lib/liberty-plugin.js" no-entry></script>
   <script>
     const basePATH = location.hostname.includes('github') ? '/co-share' : ''
 
@@ -49,13 +49,13 @@
         `
       }
     }
-    
+
     // 启动模块加载器
     Liberty.addPlugin('.css', res => {
       const { path, resource } = res
       if (path.includes('global') || path.includes('lib')) {
         const styleNode = document.createElement('style')
-        styleNode.textContent = res.resource
+        styleNode.textContent = resource
         document.head.appendChild(styleNode)
         return null
       }

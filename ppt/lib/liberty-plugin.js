@@ -1,4 +1,4 @@
-const GrassPlugin = (function () {
+var GrassPlugin = (function () {
   function loader (source) {
     source = source.trim()
     if (/^\/\/\s*#no\s+compile\s*\n/.test(source)) {
