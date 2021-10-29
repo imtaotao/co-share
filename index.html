@@ -37,7 +37,7 @@
   <script src="ppt/lib/liberty.js" no-entry></script>
   <script src="ppt/lib/liberty-plugin.js" no-entry></script>
   <script>
-    const basePATH = location.hostname.includes('github') ? '/co-share' : ''
+    const basePATH = location.hostname.includes('github') || window.__GARFISH__ ? '/co-share' : ''
 
     window.onerror = function(error) {
       console.error('Occur error.')
